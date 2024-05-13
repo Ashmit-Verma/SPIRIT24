@@ -2,9 +2,10 @@ import User from "../models/User.js";
 
 export async function createUser(req, res) {
   try {
-    const { username, email, password } = req.body;
+    // console.log(req);
+    const { username, email, password } = req.query;
     const newUser = await User.create({ username, email, password });
-    res.status(201).json(newUser);
+    res.status(201).json("success");
   } catch (error) {
     console.error("Error creating user:", error);
     res.status(500).json({ error: "Internal server error" });

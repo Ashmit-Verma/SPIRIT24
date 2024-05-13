@@ -21,5 +21,5 @@ app.use("/api", userRoutes);
 server.listen(process.env.PORT, async () => {
   console.log(`Server running on port ${process.env.PORT}`);
   await sequelize.sync();
-  console.log("Database synced");
+  console.log("Database Connected!");
 });
