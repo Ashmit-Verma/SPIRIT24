@@ -3,9 +3,11 @@ import sequelize from "../config/database.js";
 
 const User = sequelize.define("User", {
   id: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
+    type: DataTypes.INTEGER,
     primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
+    unique: true,
   },
   username: {
     type: DataTypes.STRING,
@@ -18,6 +20,18 @@ const User = sequelize.define("User", {
     validate: {
       isEmail: true,
     },
+  },
+  mobileNo: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      isNumeric: true,
+    },
+  },
+  collegeName: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   password: {
     type: DataTypes.STRING,
