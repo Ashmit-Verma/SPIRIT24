@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.css'
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+
 const header = () => {
     return (
         <section className='h-wrap'>
