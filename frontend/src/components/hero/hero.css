@@ -1,0 +1,35 @@
+.Hero-wrap{
+    margin-top: 3%;
+   
+  } 
+  .texts{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    row-gap: 0;
+  
+  }
+  .small{
+    margin-top: 4%;
+    font-size: 1em;
+    height: 24px;
+    
+  }
+  
+  .quote{
+ margin-top: 25%;
+    font-size: 20px;
+    
+    
+  }
+  .texts button{
+    margin-top: 1%;
+    color: white;
+    background-color: black;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 40px;
+  }
+   
+
