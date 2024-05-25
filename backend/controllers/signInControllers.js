@@ -1,22 +1,20 @@
 import User from "../models/User.js";
+import bcrypt from "bcrypt";
 
-export async function authenticateUser(req, res) {
+export const authenticateUser = async (req, res) => {
+  const { email, password } = req.query;
+  console.log(req.query);
   try {
-    const { email, password } = req.query;
     const user = await User.findOne({ where: { email } });
-
     if (!user) {
-      return res.status(404).json({ error: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
-
-    if (user.password !== password) {
-      return res.status(401).json({ error: "Invalid password" });
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid password" });
     }
-
-    const { id, name, mobileNo, collegeName, points } = user;
-    res.json({ id, name, email, mobileNo, collegeName, points });
+    res.json({ message: "Authentication successful", user });
   } catch (error) {
-    console.error("Error authenticating user:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
-}
+};

@@ -2,15 +2,16 @@ import User from "../models/User.js";
 
 export async function createUser(req, res) {
   try {
-    const { username, email, mobileNo, collegeName, password } = req.query;
+    console.log("Here");
+    const { name, email, mobile, college, password } = req.query;
 
     console.log(req.query);
     const newUser = await User.create({
-      username,
+      name,
       email,
       password,
-      mobileNo,
-      collegeName,
+      mobile,
+      college,
     });
     res.status(201).json("success");
   } catch (error) {
@@ -29,16 +30,15 @@ export async function getAllUsers(req, res) {
   }
 }
 
-export async function getUserById(req, res) {
+export const getUserById = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const user = await User.findByPk(id);
     if (!user) {
-      return res.status(404).json({ error: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
     res.json(user);
   } catch (error) {
-    console.error("Error fetching user by ID:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
-}
+};
