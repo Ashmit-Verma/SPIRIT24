@@ -23,6 +23,7 @@
   font-size: 23em;
   padding: 0;
   margin: -50px;
+  z-index: 0;
  
 }
 .quote{
