@@ -15,7 +15,12 @@
   position: relative;
   font-size: 23em;
   padding: 0;
+<<<<<<< HEAD
   margin-top: 2%;
+=======
+  margin: -50px;
+  z-index: 0;
+>>>>>>> 6ed7f5004338ae8ef3db54d9667c9d42d243a374
  
 }
 

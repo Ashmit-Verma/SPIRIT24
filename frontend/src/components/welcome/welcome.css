@@ -1,0 +1,24 @@
+.welcomecontainer {
+    padding: 20px;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.heading1 {
+    font-size: 60px;
+    font-weight: bold;
+
+}
+
+.content {
+    margin-top: 2%;
+    font-size: 24px;
+    text-align: center;
+
+
+}
