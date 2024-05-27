@@ -36,6 +36,7 @@ function Form() {
       <form onSubmit={handleSubmit}>
           <div class="underline-container">
            <p class="underline-text">SignUp</p>
+           <hr class="underline"/>
            </div>
   
          <div className="row">

@@ -6,7 +6,7 @@ const header = () => {
         <section className='h-wrap'>
             <div className='navbar'>
                 <div className="logo">
-                   <img src="spiritlogo.jpg" alt="" /> 
+                   <a href="/"><img src="spiritlogo.jpg" alt="" /></a> 
                 </div>
                 <div className="points">
                     <a href="">about</a>
