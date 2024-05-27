@@ -1,5 +1,6 @@
-import Header from "./components/header/header";
- import Hero from "./components/hero/hero"
+import Header from "./Pages/Signup/SignUp1";
+import Form from "./Pages/Signup/Form";
+ 
 
 
   
@@ -7,7 +8,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Hero />
+      <Form />
       
       
    </div>

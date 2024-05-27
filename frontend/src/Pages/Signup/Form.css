@@ -1,0 +1,117 @@
+.App {
+  
+    text-align: center;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+  
+  }
+  
+  form {
+    border-radius: 20px;
+    margin-top: 5.8%;
+  
+    display: inline-block;
+    text-align: left;
+    width: 80vw;
+    
+    padding: 10px 35px;
+    position: relative;
+      z-index: 10;
+      background-color:#FF823B;
+      
+    
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right: 25px;
+  }
+  
+  .col:last-child {
+    margin-right: 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  
+  input {
+    border-color: white;
+    border-radius: 10px;
+    width: 98%;
+    outline: none;
+    padding: 4px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+  }
+  
+  
+  .underline-text {
+    display: inline-block; /* Ensure the element is treated as a block for ::after */
+    position: relative; /* Position relative to allow ::after positioning */
+    font-size: 30px;
+    color: black;
+  }
+  
+  /* .underline-container {
+    border: none; 
+    height: 2px; 
+    background-color: black; /* Set the color of the line 
+  } */
+  
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .others{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Done {
+    text-align: center;
+    font-size: 13px;
+    border-radius: 30px;
+    background-color: black;
+    width: 350px;
+    height: 27px;
+    padding-top: 0.7%;
+    color: white;
+  }
+  .cancel{
+    text-decoration: underline;
+    margin-top: 1%;
+    font-size: 13px;
+  }
+  .spirit{
+    position: fixed;
+    z-index: 2;
+    font-size: 350px;
+  padding-bottom: 300px;
+  
+  }
+  

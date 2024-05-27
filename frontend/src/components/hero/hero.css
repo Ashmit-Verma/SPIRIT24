@@ -10,29 +10,15 @@
   row-gap: 0;
 
 }
-.small{
-  margin-top: 9%;
-  font-size: 1em;
-  height: 24px;
-  position: relative;
-  z-index: 10;
-  
-}
+
 .large {
   position: relative;
   font-size: 23em;
   padding: 0;
-  margin: -50px;
+  margin-top: 2%;
  
 }
-.quote{
-  position: relative;
-  margin-bottom: 0;
-  font-size: 20px;
 
-  
-  
-}
 .texts a{
   position: relative;
   margin-top: 2%;
