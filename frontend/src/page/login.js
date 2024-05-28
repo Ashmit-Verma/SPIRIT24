@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from "../components/header/header.js";
-import Form from "../components/form/Form.js"
+import LForm from "../components/form/Lform.js"
 import Footer from "../components/footer/footer.js";
 
 const signup = () => {
   return (
     <div>
      <Header/>
-     <Form/>
+     <LForm/>
      <Footer/>
     </div>
   );

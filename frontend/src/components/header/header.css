@@ -64,7 +64,7 @@ background: linear-gradient(rgba(235, 69, 0, 1), rgba(235, 69, 0, 0.8)),  url('/
 background-size: contain;
 z-index: -1;
 animation: rotateBalls 10s linear infinite;
-transform-origin: center center;
+transform-origin: top center;
 }
 
 @keyframes rotateBalls {
