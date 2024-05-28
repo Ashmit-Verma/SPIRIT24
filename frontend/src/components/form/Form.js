@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css';
 import { validate } from './validate';
@@ -14,6 +15,7 @@ function Form() {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +38,6 @@ function Form() {
     console.log('Form submitted successfully:', formData);
 
     try {
-      console.log("Hi");
       const response = await axios.post('http://localhost:4000/signup', {
         name: formData.name,
         email: formData.email,
@@ -44,9 +45,9 @@ function Form() {
         college: formData.college,
         password: formData.password,
       });
-      if (response.status === 200) {
-        alert('User registered successfully');
+      if (response.status === 201) {
         console.log('Form submitted:', response.data);
+        navigate('/login'); // Redirect to login page on successful signup
       } else {
         alert('Error registering user');
         console.error('Error:', response.data);

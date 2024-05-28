@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Lform.css';
-// import { validate } from './validate';
+
 
 function LForm() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ function LForm() {
     password: '',
   });
 
-//   const [errors, setErrors] = useState({});
+const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,24 +23,17 @@ function LForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submission attempted');
-    // const validationErrors = validate(formData);
-    // if (Object.keys(validationErrors).length > 0) {
-    //   console.log('Validation errors found', validationErrors);
-    //   setErrors(validationErrors);
-    //   return;
-    // }
     console.log('Form submitted successfully:', formData);
 
     try {
-      console.log("Hi");
       const response = await axios.post('http://localhost:4000/login', {
         email: formData.email,
         password: formData.password,
       });
       if (response.status === 200) {
-        alert('Login successfull');
         console.log('Form submitted:', response.data);
+        localStorage.setItem('token', response.data.token);
+        navigate('/dashboard');
       } else {
         alert('Wrong Credentials');
         console.error('Error:', response.data);
