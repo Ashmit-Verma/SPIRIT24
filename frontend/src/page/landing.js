@@ -5,6 +5,7 @@ import Welcome from "../components/welcome/welcome";
 import Todaysevents from "../components/todaysevents/Todaysevents";
 import Footer from "../components/footer/footer.js";
 import Faq from "../components/FAQ/faq.js";
+import Gallery from '../components/gallery/gallery.js';
 
 const Landing = () => {
   return (
@@ -13,6 +14,7 @@ const Landing = () => {
      <Hero/>
       <Welcome/>
       <Todaysevents/>
+      <Gallery/>
       <Faq/>
       <Footer/>
     </div>
