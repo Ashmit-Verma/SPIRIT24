@@ -105,6 +105,7 @@ const adminRouterInstance = adminRouter;
 console.log(adminJs.options.rootPath);
 adminRouter.use(adminJs.options.rootPath, adminRouterInstance);
 
+
 export default adminRouter;
 
 // export default adminRouter;

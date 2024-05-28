@@ -9,9 +9,9 @@ export async function createUser(req, res) {
     const newUser = await User.create({
       name,
       email,
-      password,
-      mobile,
       college,
+      mobile,
+      password,
     });
     res.status(201).json("success");
   } catch (error) {
