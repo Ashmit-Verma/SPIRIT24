@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Form.css';
-import { validate } from './validate';
+import './Lform.css';
+// import { validate } from './validate';
 
 function LForm() {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    college: '',
-    contact: '',
     password: '',
-    confirmPassword: ''
   });
 
-  const [errors, setErrors] = useState({});
+//   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,33 +23,30 @@ function LForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submission attempted');
-    const validationErrors = validate(formData);
-    if (Object.keys(validationErrors).length > 0) {
-      console.log('Validation errors found', validationErrors);
-      setErrors(validationErrors);
-      return;
-    }
+    // const validationErrors = validate(formData);
+    // if (Object.keys(validationErrors).length > 0) {
+    //   console.log('Validation errors found', validationErrors);
+    //   setErrors(validationErrors);
+    //   return;
+    // }
     console.log('Form submitted successfully:', formData);
 
     try {
       console.log("Hi");
-      const response = await axios.post('http://localhost:4000/signup', {
-        name: formData.name,
+      const response = await axios.post('http://localhost:4000/login', {
         email: formData.email,
-        mobile: formData.contact,
-        college: formData.college,
         password: formData.password,
       });
       if (response.status === 200) {
-        alert('User registered successfully');
+        alert('Login successfull');
         console.log('Form submitted:', response.data);
       } else {
-        alert('Error registering user');
+        alert('Wrong Credentials');
         console.error('Error:', response.data);
       }
     } catch (error) {
       console.error('Error during form submission:', error);
-      alert('Error registering user');
+      alert('Error during form submission:');
     }
   };
 
@@ -76,7 +69,7 @@ function LForm() {
               onChange={handleChange}
               required
             />
-            {errors.email && <span className="error">{errors.email}</span>}
+            {/* {errors.email && <span className="error">{errors.email}</span>} */}
           </div>
         </div>
         <div className="row">
@@ -89,7 +82,7 @@ function LForm() {
               onChange={handleChange}
               required
             />
-            {errors.password && <span className="error">{errors.password}</span>}
+            {/* {errors.password && <span className="error">{errors.password}</span>} */}
           </div>
         </div>
         <div className="others">
