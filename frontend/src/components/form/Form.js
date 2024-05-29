@@ -45,12 +45,11 @@ function Form() {
         college: formData.college,
         password: formData.password,
       });
-      if (response.status === 201) {
-        console.log('Form submitted:', response.data);
-        navigate('/login'); // Redirect to login page on successful signup
+      if (response.status === 200) {
+        // Redirect to OTP verification page
+        navigate('/otpVerify');
       } else {
-        alert('Error registering user');
-        console.error('Error:', response.data);
+        throw new Error('Failed to sign up');
       }
     } catch (error) {
       console.error('Error during form submission:', error);

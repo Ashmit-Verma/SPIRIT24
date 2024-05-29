@@ -9,4 +9,4 @@ export const development = {
   dialect: "mysql",
 };
 
-export const production = {};
+

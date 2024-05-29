@@ -1,7 +1,23 @@
-import React from 'react';
-import './header.css'
+import React, { useState, useEffect } from 'react';
+import './header.css';
 
-const header = () => {
+const Header = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        setIsLoggedIn(!!token);
+    }, []);
+
+    const handleLogout = () => {
+        const confirmLogout = window.confirm('Are you sure you want to logout?');
+        if (confirmLogout) {
+            localStorage.removeItem('token');
+            setIsLoggedIn(false);
+            window.location.href = '/';
+        }
+    };
+
     return (
         <section className='h-wrap'>
             <div className='navbar'>
@@ -16,14 +32,15 @@ const header = () => {
                     <a href="">contact us</a>
                 </div>
                 <div className="login">
-                    
-                    <a href="/login" className="log">login</a>
-                   
+                    {isLoggedIn ? (
+                        <button onClick={handleLogout} className="log">Logout</button>
+                    ) : (
+                        <a href="/login" className="log">Login</a>
+                    )}
                 </div>
-
             </div>
-
         </section>
-    )
-}
-export default header;
+    );
+};
+
+export default Header;

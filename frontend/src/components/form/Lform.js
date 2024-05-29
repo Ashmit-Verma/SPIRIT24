@@ -30,6 +30,7 @@ const navigate = useNavigate();
         email: formData.email,
         password: formData.password,
       });
+      localStorage.setItem('token', response.data.token);
       if (response.status === 200) {
         console.log('Form submitted:', response.data);
         localStorage.setItem('token', response.data.token);

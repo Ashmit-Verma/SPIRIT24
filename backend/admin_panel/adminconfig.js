@@ -9,6 +9,9 @@ import dotenv from "dotenv";
 import { buildRouter } from "@adminjs/express";
 import Admin from "../models/Admin.js";
 
+
+
+
 // const adminRouter = express.Router();
 
 dotenv.config();
@@ -57,8 +60,8 @@ const options = {
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "&vttuTw5",
-  database: "adminjs",
+  password: process.env.password,
+  database: process.env.database,
   schema: {
     tableName: "user_sessions",
     columnNames: {

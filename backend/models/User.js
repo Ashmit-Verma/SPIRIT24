@@ -35,6 +35,10 @@ const User = sequelize.define(
       type: DataTypes.INTEGER,
       defaultValue: 0,
     },
+    firstLogin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
   },
   {
     hooks: {
