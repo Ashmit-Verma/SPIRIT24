@@ -1,39 +1,38 @@
-.Hero-wrap{
+
+.Hero-wrap {
   margin-top: 3%;
- 
-} 
-.texts{
+}
+
+.texts {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   row-gap: 0;
-
 }
-.small{
+
+.small {
   margin-top: 9%;
   font-size: 1em;
   height: 24px;
   position: relative;
   z-index: 10;
-
 }
+
 .large {
   position: relative;
   font-size: 23em;
   padding: 0;
   margin: -50px;
-
 }
-.quote{
+
+.quote {
   position: relative;
   margin-bottom: 0;
   font-size: 20px;
-
-
-
 }
-.texts a{
+
+.texts a {
   position: relative;
   margin-top: 2%;
   margin-bottom: 1%;
@@ -43,4 +42,56 @@
   padding: 6px 26px;
   border: none;
   border-radius: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .Hero-wrap {
+    margin-top: 5%;
+  }
+
+  .small {
+    margin-top: 10%;
+    font-size: 1.2em;
+  }
+
+  .large {
+    font-size: 10em; 
+    margin: -30px;
+  }
+
+  .quote {
+    font-size: 18px;
+  }
+
+  .texts a {
+    font-size: 14px;
+    padding: 8px 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .Hero-wrap {
+    margin-top: 7%;
+  }
+
+  .small {
+    margin-top: 12%;
+    font-size: 1.4em;
+  }
+
+  .large {
+    font-size: 5em; 
+    margin: -20px;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+
+  .texts a {
+    font-size: 16px;
+    padding: 10px 35px;
+  }
 }
