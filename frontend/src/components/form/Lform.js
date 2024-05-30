@@ -46,9 +46,9 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="App">
+    <div className="LApp">
       <h1 className='spirit'>SPIRIT</h1>
-      <form onSubmit={handleSubmit}>
+      <form className='Lform' onSubmit={handleSubmit}>
         <div className="underline-container">
           <p className="underline-text">Login</p>
           <hr className="underline" />
@@ -81,8 +81,12 @@ const navigate = useNavigate();
           </div>
         </div>
         <div className="others">
-          <button type="submit" className="Done">Continue</button>
+          <div className='option'>
+          <button type="submit" className="continue">Continue</button>
           <a className='cancel' href="/">cancel</a>
+          </div>
+        
+
           <small>Don't have an account? <a href="/signup">SignUp</a></small>
         </div>
       </form>

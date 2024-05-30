@@ -1,7 +1,8 @@
-.App {
+.LApp {
+
   
     text-align: center;
-    margin-top: 150px;
+    margin-top: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,15 +12,16 @@
   
   }
   
-  form {
+  .Lform {
     border-radius: 20px;
     margin-top: 5.8%;
     margin-bottom:5%;
-    width: 30vw;
+    width: 40vw;
+    height: 300px;
     display: inline-block;
     text-align: left;
     
-    padding: 10px 35px;
+    padding: 10px 30px;
     position: relative;
       z-index: 10;
       background-color:#FF823B;
@@ -32,22 +34,20 @@
   .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
   }
   
   .col {
     flex: 1;
-    margin-right: 25px;
+  
   }
   
-  .col:last-child {
-    margin-right: 0;
-  }
+  
   
   label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 12px;
+    margin: 7px;
+    font-size: 15px;
   }
   
   input {
@@ -81,45 +81,134 @@
   .error{
     color:rgb(193, 0, 0);
   }
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
   
-  button:hover {
-    background-color: #0056b3;
-  }
   
   .others{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
   }
-  .Done {
+  .continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 13px;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: black;
-    width: 350px;
-    height: 27px;
-    padding-top: 0.7%;
+    width: 50%; /* Use a percentage for better responsiveness */
+    max-width: 200px; /* Set a max width */
+    height: 35px;
+    padding: 7px 20px; /* Adjust padding for better responsiveness */
     color: white;
-  }
+    transition: all 0.3s ease; /* Smooth transition for changes */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    .continue {
+        width: 50%;
+        max-width: 150px;
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .continue {
+        width: 70%;
+        max-width: 120px;
+        font-size: 11px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .continue {
+        width: 90%;
+        max-width: 100px;
+        font-size: 10px; /* Adjust font size for smaller screens */
+    }
+}
+
+ 
   .cancel{
     text-decoration: underline;
     margin-top: 1%;
     font-size: 13px;
   }
-  .spirit{
-    position: fixed;
-    z-index: 2;
-    font-size: 350px;
-  padding-bottom: 300px;
   
+  .option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* This will space the items out */
+    gap:3vw; /* This will add space between the items */
+}
+small{
+  margin-top: 10px;
+}
+small a{
+  text-decoration: underline;
+}
+@media (max-width: 550px) {
+  .Lform {
+    border-radius: 20px;
+    margin-top: 0%;
+    
+    width: 50vw;
+    height: 300px;
+    
+    
   }
   
+}
+@media (max-width: 490px) {
+  .Lform {
+    
+    margin-top: 0;
+    width: 60vw;
+    height: 320px;
+    
+    
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* This will space the items out */
+    gap:0px; /* This will add space between the items */
+}
+  .continue{
+    width: 30vw;
+  }
+}
+@media (max-width: 550px) {
+    
+  .spirit{
+    
+    padding-bottom: 68vw;
+  }
+}
+@media (max-width: 500px) {
+    
+  .spirit{
+    
+    padding-bottom: 74vw;
+  }
+}
+@media (max-width: 450px) {
+    
+  .spirit{
+    
+    padding-bottom: 80vw;
+  }
+}
+@media (max-width: 350px) {
+    
+  .spirit{
+    
+    padding-bottom: 102vw;
+  }
+}
+
