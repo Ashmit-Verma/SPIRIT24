@@ -3,6 +3,7 @@
   margin-top: 3%;
 }
 
+
 .texts {
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@
   align-items: center;
   row-gap: 0;
 }
+
 
 .small {
   margin-top: 9%;
@@ -19,18 +21,25 @@
   z-index: 10;
 }
 
+
 .large {
   position: relative;
   font-size: 23em;
   padding: 0;
   margin: -50px;
+  background-image: url('/public/ellipses.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
+
 
 .quote {
   position: relative;
   margin-bottom: 0;
   font-size: 20px;
 }
+
 
 .texts a {
   position: relative;
@@ -45,24 +54,34 @@
 }
 
 
+
+
 @media (max-width: 768px) {
   .Hero-wrap {
     margin-top: 5%;
   }
+
 
   .small {
     margin-top: 10%;
     font-size: 1.2em;
   }
 
+
   .large {
-    font-size: 10em; 
+    font-size: 10em;
     margin: -30px;
+    background-image: url('/public/ellipses.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
+
 
   .quote {
     font-size: 18px;
   }
+
 
   .texts a {
     font-size: 14px;
@@ -71,24 +90,34 @@
 }
 
 
+
+
 @media (max-width: 480px) {
   .Hero-wrap {
     margin-top: 7%;
   }
+
 
   .small {
     margin-top: 12%;
     font-size: 1.4em;
   }
 
+
   .large {
-    font-size: 5em; 
+    font-size: 5em;
     margin: -20px;
+    background-image: url('/public/ellipses.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
+
 
   .quote {
     font-size: 16px;
   }
+
 
   .texts a {
     font-size: 16px;
