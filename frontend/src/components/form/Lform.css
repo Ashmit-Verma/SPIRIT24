@@ -8,7 +8,10 @@
     justify-content: center;
     align-items: center;
     
-    
+    background-image: url('/public/ellipses.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   
   }
   
@@ -98,7 +101,7 @@
     font-size: 13px;
     border-radius: 10px;
     background-color: black;
-    width: 50%; /* Use a percentage for better responsiveness */
+    width: 50%; 
     max-width: 200px; /* Set a max width */
     height: 35px;
     padding: 7px 20px; /* Adjust padding for better responsiveness */
@@ -142,8 +145,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* This will space the items out */
-    gap:3vw; /* This will add space between the items */
+    justify-content: space-between; 
+    gap:3vw;
 }
 small{
   margin-top: 10px;
@@ -176,8 +179,8 @@ small a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* This will space the items out */
-    gap:0px; /* This will add space between the items */
+    justify-content: space-between; 
+    gap:0px; 
 }
   .continue{
     width: 30vw;
@@ -211,4 +214,5 @@ small a{
     padding-bottom: 102vw;
   }
 }
+
 
