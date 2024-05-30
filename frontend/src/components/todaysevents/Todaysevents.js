@@ -3,7 +3,7 @@ import './Todaysevents.css'
 import ImageCard from './ImageCard'
 const Todaysevents = () => {
     return (
-        <div className='tecont'>
+        <div className='tecont' id="events">
             <div className='teheading'>
                 <div className='heading1'>Todays Events</div>
                 <div className='tecontent'>For a detailed schedule visit <a href='' style={{ textDecoration: "underline" }}>Events Page</a></div>

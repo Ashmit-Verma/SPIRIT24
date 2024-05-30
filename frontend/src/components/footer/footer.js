@@ -1,5 +1,6 @@
 import React from "react";
 import './footer.css'
+import { Link } from "react-router-dom";
 
 const Footer=()=>{
     return(
@@ -8,18 +9,18 @@ const Footer=()=>{
                 <img src="spirit.png" alt="" className="spirit-logo"/>
                 <img src="Frame 49.png" alt="Copyright"  className="copyright"/>
                 <div className="social-media">
-                    <img src="insta.png" alt=""  className="media-img"/>
-                    <img src="youtube.png" alt="" className="media-img" />
-                    <img src="fb.png" alt="" className="media-img" />
+                    <a href="https://www.instagram.com/spirit_iitguwahati/" target="_blank"><img src="insta.png" alt=""  className="media-img"/></a>
+                    <a href="https://www.youtube.com/@spiritiitguwahati2541" target="_blank"><img src="youtube.png" alt="" className="media-img" /></a>
+                    <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="fb.png" alt="" className="media-img" /></a>
                 </div>
 
             </div>
             <div className="big-div"><div className="second">
                 <div className="quick">Quick Links</div>
                 <div className="links-div">
-                <div className="links">Home</div>
-                <div className="links">Events</div>
-                <div className="links">About Us</div>
+                <div className="links"><a href="/#home">Home</a></div>
+                <div className="links"><a href="/#events">Events</a></div>
+                <div className="links"><a href="/#aboutus">About Us</a></div>
                 </div>
             </div>
             <div className="second">

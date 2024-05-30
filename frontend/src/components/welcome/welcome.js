@@ -2,7 +2,7 @@ import React from 'react'
 import './welcome.css'
 const Welcome = () => {
     return (
-        <div className='welcomecontainer'>
+        <div className='welcomecontainer' id="aboutus">
             <div className='heading1'>
                 Welcome to Spirit!
             </div>

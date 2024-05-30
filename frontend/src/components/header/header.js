@@ -20,7 +20,7 @@ const Header = () => {
 
     return (
         <section className='h-wrap'>
-            <div className='navbar'>
+            <div className='navbar' >
                 <div className="logo">
                    <a href="/"><img src="spiritlogo.jpg" alt="" /></a> 
                 </div>

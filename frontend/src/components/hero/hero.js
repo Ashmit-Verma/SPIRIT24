@@ -2,7 +2,7 @@ import React from 'react';
 import './hero.css'
 const header = () => {
     return (
-        <section className='Hero-wrap '>
+        <section className='Hero-wrap ' id="home">
             <div className="texts">
                 <h1 className="small">IIT GUWAHATI'S</h1>
                  <h2 className='large'>SPIRIT</h2>
