@@ -139,7 +139,7 @@ function Form() {
           </div>
         </div>
         <div className="others">
-          <button type="submit" className="Done">Done</button>
+           <button type="submit" className="Done">Done</button>
           <a className='cancel' href="/">cancel</a>
         </div>
       </form>

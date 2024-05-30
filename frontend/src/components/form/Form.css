@@ -82,18 +82,7 @@
   .error{
     color:rgb(193, 0, 0);
   }
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+ 
   
   .others{
     display: flex;
@@ -106,21 +95,101 @@
     font-size: 13px;
     border-radius: 30px;
     background-color: black;
-    width: 350px;
-    height: 27px;
-    padding-top: 0.7%;
+    width: 35vw;
+    height: 32px;
+    padding-top: 0;
+    outline: none;
     color: white;
+    transition: transform 0.3s ease;
   }
+  
+.Done:hover {
+  transform: scale(1.1);
+}
   .cancel{
     text-decoration: underline;
     margin-top: 1%;
     font-size: 13px;
   }
   .spirit{
-    position: fixed;
+    position: absolute;
     z-index: 2;
-    font-size: 350px;
-  padding-bottom: 300px;
+    font-size:34vw;
+  padding-bottom: 40vw;
   
   }
-  
+  @media (max-width: 550px )  {
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        min-width: 100%; /* Ensure full width */
+    }
+
+    .others {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .others .cancel {
+        margin-top: 10px;
+    }
+    
+}
+
+
+  @media (max-width: 650px) {
+    
+    .spirit{
+      
+      padding-bottom: 55vw;
+    }
+}
+
+@media (max-width: 550px) {
+    
+  .spirit{
+    
+    padding-bottom: 85vw;
+  }
+}
+@media (max-width: 500px) {
+    
+  .spirit{
+    
+    padding-bottom: 90vw;
+  }
+}
+@media (max-width: 450px) {
+    
+  .spirit{
+    
+    padding-bottom: 120vw;
+  }
+}
+
+
+
+
+@media (max-width: 350px) {
+    
+  .spirit{
+    
+    padding-bottom: 150vw;
+  }
+}
+  @media (min-width: 900px) {
+    
+    .spirit{
+      
+      padding-bottom: 30vw;
+    }
+}
+  @media (min-width: 1100px) {
+    
+    .spirit{
+      font-size: 30vw ;
+      padding-bottom: 25vw;
+    }
+}
