@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 import sequelize from "./config/database.js";
 import bcrypt from "bcrypt";
 // AdminJS
-import adminRouter from "./admin_panel/adminconfig.js";
+// import adminRouter from "./admin_panel/adminconfig.js";
+import { adminJs, router as adminRouter } from './admin.js';
 
 // routes
 import profileRoute from "./routes/profileRoute.js";
@@ -28,9 +29,9 @@ app.use(express.json());
 app.use(cors());
 app.use("/api", userRoutes);// user routes
 app.use("/signup", signRoute);// signIn route
-app.use("/admin", adminRouter);// adminjs routes
+// app.use("/admin", adminRouter);// adminjs routes
 app.use("/login",loginRoute);//login routes
-
+app.use(adminJs.options.rootPath, adminRouter);
 
 
 

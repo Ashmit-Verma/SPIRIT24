@@ -54,7 +54,7 @@ position: relative;
 margin: 0;
 padding: 0;
 overflow: hidden;
-background: linear-gradient(rgba(235, 69, 0, 1), rgba(235, 69, 0, 1))
+background: linear-gradient(rgba(229, 120, 71, 1), rgba(235, 69, 0, 1))
 ,url('/public/ellipses.svg');
 background-repeat: no-repeat;
 background-size: cover, contain;
