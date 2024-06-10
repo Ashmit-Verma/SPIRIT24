@@ -28,6 +28,7 @@ const Header = () => {
                     <a href="">About</a>
                     <a href="">Sponsors</a>
                     <a href="">Events</a>
+                    <a href="/Leaderboard">Leaderboard</a>
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
                 </div>
