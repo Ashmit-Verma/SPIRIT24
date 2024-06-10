@@ -1,95 +1,94 @@
-.faq-container{
+.faq-container {
     display: flex;
     flex-direction: column;
-    row-gap: 4vh;
-    /* background-color:#E57847 ; */
-    /* width: 50%; */
-
+    row-gap: 2vh; /* Reduced gap for better spacing */
     justify-content: center;
     align-items: center;
-    height: 100vh;
-
+    height: auto; /* Changed from 100vh to auto for better responsiveness */
 }
 
-.accordion-title{
+.accordion-title, .accordion-content {
+    width: 90%; /* Set a consistent width for all accordion items */
+    margin: 0 auto; /* Center the accordion items */
+}
+
+.accordion-title {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; /* Adjusted for better spacing */
     align-items: center;
-    width: 100%;
+    padding: 2vh; /* Added padding for better touch targets */
     border: 1px solid black;
-    font-size: 5vh;
-    border-radius: 2vh;
+    font-size: 4vh; /* Reduced font size */
+    border-radius: 1vh; /* Adjusted border radius */
+    cursor: pointer; /* Indicates the element is clickable */
 }
 
-.accordion-content{
+.accordion-content {
     display: flex;
-    /* flex-wrap: wrap; */
-    width: 100%;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    font-size: 3vh;
+    font-size: 2vh; /* Reduced font size */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    overflow: hidden;
+    max-height: 0; /* Initially, max-height is 0 */
+    opacity: 0;
 }
 
-.accordion-item{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+.accordion-content-active {
+    max-height: 25vh; /* Adjusted max-height for better fit */
+    opacity: 1; /* Content is fully visible */
 }
 
-.faq-title{
-    font-size: 10vh;
+.accordion-item {
+    opacity: 0;
+    transition: opacity 5s ease-in-out, transform 5s ease-in-out;
+    transform: translateY(20px);
+    visibility: hidden;
 }
 
+.accordion-item-in-view {
+    animation: fadeInUp 1s ease forwards;
+    visibility: visible; /* Make item visible when in view */
+}
 
-@media only screen and (max-width:768px){
-    .faq-container{
-        display: flex;
-        flex-direction: column;
-        row-gap: 2vh;
-        /* background-color:#E57847 ; */
-        /* width: 50%; */
-    
-        justify-content: center;
-        align-items: center;
-        height: 60vh;
-    
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    
-    .accordion-title{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        border: 1px solid black;
-        font-size: 2.5vh;
-        border-radius: 2vh;
-        text-align: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
-    .accordion-content{
-        display: flex;
-        /* flex-wrap: wrap; */
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        /* height: 100vh; */
-        font-size: 3vh;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.faq-title {
+    font-size: 8vh; /* Reduced font size */
+}
+
+@media only screen and (max-width: 768px) {
+    .faq-container {
+        row-gap: 1vh; /* Further reduced gap for mobile */
     }
-    
-    .accordion-item{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
+
+    .accordion-title, .accordion-content {
+        width: 95%; /* Adjusted width for mobile */
     }
-    
-    .faq-title{
-        font-size: 10vh;
+
+    .accordion-title {
+        font-size: 3vh; /* Reduced font size for mobile */
+    }
+
+    .accordion-content {
+        font-size: 2vh; /* Ensured font size is consistent on mobile */
+    }
+
+    .faq-title {
+        font-size: 6vh; /* Reduced font size for mobile */
     }
 }
