@@ -1,0 +1,52 @@
+/* frontend/src/page/registrationSuccess.css */
+.Success-wrap {
+    margin-top: 3%;
+  }
+  
+  .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0;
+  }
+  
+  .success-message {
+    font-size: 2.5em;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .logged-in-message {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .ca-program-message {
+    font-size: 1em;
+    margin-top: 20px;
+  }
+  
+  .texts a {
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    color: white;
+    font-size: 12px;
+    background-color: black;
+    padding: 6px 26px;
+    border: none;
+    border-radius: 40px;
+  }
+  
+  @media (max-width: 1200px) {
+    .Success-wrap {
+      margin-top: 5%;
+    }
+  
+    .texts a {
+      font-size: 14px;
+      padding: 8px 30px;
+    }
+  }
+  

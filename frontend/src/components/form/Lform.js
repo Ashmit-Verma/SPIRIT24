@@ -34,7 +34,7 @@ const navigate = useNavigate();
       if (response.status === 200) {
         console.log('Form submitted:', response.data);
         localStorage.setItem('token', response.data.token);
-        navigate('/dashboard');
+        navigate('/registrationSuccess');
       } else {
         alert('Wrong Credentials');
         console.error('Error:', response.data);

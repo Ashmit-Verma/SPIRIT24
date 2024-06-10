@@ -1,12 +1,12 @@
-
-// export default App;
+// frontend/src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route ,Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './page/landing';
 import Signup from './page/signup';
 import Login from './page/login';
 import Dashboard from './page/dashboard';
 import OtpVerify from './page/otpverify';
+import RegistrationSuccess from './page/registrationSuccess';
 
 const PrivateRoute = ({ element: Element }) => {
   const isAuthenticated = !!localStorage.getItem('token'); // Simplified authentication check
@@ -22,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/otpVerify" element={<OtpVerify />} />
         <Route path="/dashboard" element={<PrivateRoute element={Dashboard} />} />
+        <Route path="/registration-success" element={<RegistrationSuccess />} />
       </Routes>
     </Router>
   );
