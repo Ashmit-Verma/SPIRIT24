@@ -10,7 +10,7 @@ const Faq = () => {
 
         window.faqTimeout = setTimeout(() => {
             setActiveIndex(activeIndex === index ? null : index);
-        }, 2000); // 2000ms delay for the answer to appear
+        }, 100); // 2000ms delay for the answer to appear
     };
 
     useEffect(() => {
@@ -37,15 +37,22 @@ const Faq = () => {
     }, []);
 
     const faqItems = [
-        "What is your return policy?",
-        "How long does shipping take?",
-        "Do you ship internationally?",
-        "How can I track my order?"
+        "What is being a campus ambassador for SPIRIT ?",
+        "What are the skills required to become a campus ambassador ?",
+        "How to become a Campus Ambassador?",
+        "How many CA's can be there from a college?",
+        "How is Campus Ambassador's performance ranked ?"
+
+
+
+
     ];
 
     return (
-        <div className="faq-container">
+        <div className="faq-main">
             <div className="faq-title">FAQ's</div>
+            <div className="faq-container">
+            
             {faqItems.map((item, index) => (
                 <div className="accordion-item" key={index} ref={el => faqRef.current[index] = el}>
                     <div
@@ -55,13 +62,15 @@ const Faq = () => {
                         <div>{item}</div>
                     </div>
                     <div className={`accordion-content ${activeIndex === index ? 'accordion-content-active' : ''}`}>
-                        {index === 0 && "Our return policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately, we can’t offer you a refund or exchange."}
-                        {index === 1 && "Shipping times vary depending on your location. Typically, domestic shipping takes 5-7 business days and international shipping can take 10-20 business days."}
-                        {index === 2 && "Yes, we ship to over 100 countries worldwide. Shipping costs will apply, and will be added at checkout."}
-                        {index === 3 && "You can track your order using the tracking number provided in your confirmation email. Visit our order tracking page and enter your tracking number."}
+                        {index === 0 && "A campus ambassador  is the person who is responsible for increasing the publicity and outreach of SPIRIT in their college and locality through various activities . In short, you would be the face of SPIRIT and as well as IIT Guwahati for the students in your college."}
+                        {index === 1 && "Any college student with a valid student id card can become a campus ambassador if he is dedicated and passionate about being one."}
+                        {index === 2 && "By registering on the Campus Ambassador portal of spirit , and filling in all the required details , you can simply wait for the confirmation from Team SPIRIT."}
+                        {index === 3 && "There can be at max two Campus Ambassadors from a particular college . But depending on the particular college size, Team spirit can also increase the number of Campus Ambassadors, so just wait for the confirmation after registering."}
+                        {index === 4 && "Depending on the efficiency upon which  various tasks, activities given by Team SPIRIT are done , every campus ambassador will be updated with their leaderboard positions which can be checked on the website ."}
                     </div>
                 </div>
             ))}
+        </div>
         </div>
     );
 };

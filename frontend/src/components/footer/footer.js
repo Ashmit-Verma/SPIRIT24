@@ -24,8 +24,18 @@ const Footer=()=>{
             <div className="second">
             <div className="quick">Contact</div>
                 <div className="links-div">
-                <div className="links">+91 98550505050</div>
-                <div className="links">Someone at Spirit</div>
+                <div className="links">Harshitha</div> 
+                <div className="links">63055 82565</div>
+                <div className="links">h.rayi@iitg.ac.in</div>
+                
+                </div>
+            </div>
+            <div className="second" >
+            <div className="quick">Contact</div>
+                <div className="links-div">
+                <div className="links">Yuvraj</div>
+                <div className="links">73005 05333</div>
+                <div className="links">yuvrajsingh@iitg.ac.in</div>
                 
                 </div>
             </div></div>
