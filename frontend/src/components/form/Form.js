@@ -15,15 +15,39 @@ function Form() {
   });
 
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate(); 
+  const [collegeSuggestions, setCollegeSuggestions] = useState([]);
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
     });
     console.log(`Field changed: ${name}, Value: ${value}`);
+
+    if (name === 'college') {
+      if (value.length > 0) {
+        try {
+          const response = await fetch(`http://universities.hipolabs.com/search?name=${value}&country=india`);
+          const data = await response.json();
+          setCollegeSuggestions(data);
+        } catch (error) {
+          console.error('Error fetching college suggestions:', error);
+          setCollegeSuggestions([]);
+        }
+      } else {
+        setCollegeSuggestions([]);
+      }
+    }
+  };
+
+  const handleCollegeSelect = (collegeName) => {
+    setFormData({
+      ...formData,
+      college: collegeName
+    });
+    setCollegeSuggestions([]);
   };
 
   const handleSubmit = async (e) => {
@@ -101,6 +125,19 @@ function Form() {
               required
             />
             {errors.college && <span className="error">{errors.college}</span>}
+            {collegeSuggestions.length > 0 && (
+              <div className="suggestions">
+                {collegeSuggestions.map((college, index) => (
+                  <div
+                    key={index}
+                    className="suggestion"
+                    onClick={() => handleCollegeSelect(college.name)}
+                  >
+                    {college.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="col">
             <label>Contact Number</label>
@@ -139,7 +176,7 @@ function Form() {
           </div>
         </div>
         <div className="others">
-           <button type="submit" className="Done">Done</button>
+          <button type="submit" className="Done">Done</button>
           <a className='cancel' href="/">cancel</a>
         </div>
       </form>
