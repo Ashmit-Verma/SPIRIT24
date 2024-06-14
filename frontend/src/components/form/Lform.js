@@ -46,7 +46,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="LApp">
+    <div className="LApp animation">
       <h1 className='spirit'>SPIRIT</h1>
       <form className='Lform' onSubmit={handleSubmit}>
         <div className="underline-container">

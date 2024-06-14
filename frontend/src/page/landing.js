@@ -10,12 +10,12 @@ import Gallery from '../components/gallery/gallery.js';
 const Landing = () => {
   return (
     <div>
-        <Header/>
-     <Hero/>
-      <Welcome/>
-      <Gallery/>
-      <Faq/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <Welcome />
+      <Gallery />
+      <Faq />
+      <Footer />
     </div>
   );
 };

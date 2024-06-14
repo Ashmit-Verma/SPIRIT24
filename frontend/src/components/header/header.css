@@ -63,7 +63,7 @@ background-size: cover, contain;
 background-position: center, center;
 }
 
-body::before {
+/* body::before {
 content: "";
 position: absolute;
 top: 0;
@@ -75,7 +75,7 @@ background-size: contain;
 z-index: -1; 
 animation: rotateBalls 5s linear infinite;
 transform-origin: top center;
-}
+} */
 
 @keyframes rotateBalls {
 0% {
