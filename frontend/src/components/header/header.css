@@ -31,22 +31,24 @@
 display: inline;
 
 }
-
+.login
+{
+  overflow: visible;
+}
 .points a {
   margin-right: 20px;  
 }
 
 .log{
+  font-size: 10px;
   margin-top: 1%;
   color: black;
-  
   background-color: #FF4F00;
   padding: 10px 26px;
   border: none;
   border-radius: 40px;
-
   margin-right: 1em;
-
+  overflow: visible;
 }
 
 body{
