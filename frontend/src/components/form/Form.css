@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'VVDS';
+  src: url('../fonts/VVDS-Fifties-Exp-Bold-Italic.otf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   
     text-align: center;
@@ -120,7 +127,8 @@
     z-index: 2;
     font-size:34vw;
   padding-bottom: 40vw;
- 
+  font-family: 'VVDS',sans-serif;
+ letter-spacing: 10px;
   
   }
   @media (max-width: 550px )  {
@@ -157,6 +165,10 @@
   .spirit{
     
     padding-bottom: 85vw;
+  }
+  .App
+  {
+    margin-top: 90px;
   }
 }
 @media (max-width: 500px) {

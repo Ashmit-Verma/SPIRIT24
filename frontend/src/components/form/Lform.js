@@ -34,7 +34,7 @@ const navigate = useNavigate();
       if (response.status === 200) {
         console.log('Form submitted:', response.data);
         localStorage.setItem('token', response.data.token);
-        navigate('/dashboard');
+        navigate('/registrationSuccess');
       } else {
         alert('Wrong Credentials');
         console.error('Error:', response.data);
@@ -46,7 +46,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="LApp">
+    <div className="LApp animation">
       <h1 className='spirit'>SPIRIT</h1>
       <form className='Lform' onSubmit={handleSubmit}>
         <div className="underline-container">

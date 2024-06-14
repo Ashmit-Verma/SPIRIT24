@@ -1,4 +1,3 @@
-// src/Gallery.js
 import React, { useEffect, useState, useRef } from 'react';
 import './gallery.css';
 
@@ -18,51 +17,56 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState('right');
   const totalImages = images.length;
-  const carouselRef = useRef(null);
 
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
         setIsTransitioning(true);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 2000);
+        setCurrentIndex((prevIndex) => {
+          if (direction === 'right') {
+            return prevIndex + 1;
+          } else {
+            return prevIndex - 1;
+          }
+        });
+      }, 1000);
 
       return () => clearInterval(interval);
     }
-  }, [isHovered]);
+  }, [isHovered, direction]);
 
   useEffect(() => {
-    if (currentIndex === totalImages) {
+    if (currentIndex >= totalImages - 1) {
       setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(0);
-      }, 500); // Duration of the transition
+        setDirection('left');
+      }, 50);
+    } else if (currentIndex <= 0 && direction === 'left') {
+      setTimeout(() => {
+        setDirection('right');
+      }, 50);
     }
-  }, [currentIndex, totalImages]);
+  }, [currentIndex, totalImages, direction]);
 
-  const handleMouseEnter = () => {
+  const handleMouseOver = () => {
     setIsHovered(true);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseOut = () => {
     setIsHovered(false);
   };
 
   return (
-    <div className="gallery-container">
+    <div className="gallery-container" id="gallery">
       <h1>Gallery</h1>
-      <div className="carousel" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="carousel">
         <div
-          className={`carousel-track ${isTransitioning ? 'transition' : ''}`}
-          ref={carouselRef}
-          style={{
-            transform: `translateX(-${(currentIndex % totalImages) * (100 / totalImages)}%)`,
-          }}
+          className={`carousel-track ${isTransitioning ? 'transition' : ''} active-${currentIndex % totalImages}`}
         >
           {images.concat(images).map((image, index) => (
             <div className="card" key={index}>
-              <img className="galleryimg" src={image} alt={`Image ${index}`} />
+              <img className="galleryimg" src={image} alt={`Image ${index}`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
             </div>
           ))}
         </div>

@@ -25,11 +25,11 @@ const Header = () => {
                    <a href="/"><img src="spiritlogo.jpg" alt="" /></a> 
                 </div>
                 <div className="points">
-                    <a href="">About</a>
+                    <a href="/#aboutus">About</a>
                     <a href="">Sponsors</a>
-                    <a href="">Events</a>
-                    <a href="">FAQ</a>
-                    <a href="">Contact Us</a>
+                    {/* <a href="/Leaderboard">Leaderboard</a> */}
+                    <a href="/#faq">FAQ</a>
+                    <a href="/#footer">Contact Us</a>
                 </div>
                 <div className="login">
                     {isLoggedIn ? (
@@ -42,5 +42,4 @@ const Header = () => {
         </section>
     );
 };
-
 export default Header;

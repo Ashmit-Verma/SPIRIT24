@@ -47,7 +47,7 @@ export const login= async (req, res) => {
       user.firstLogin = false; 
       await user.save(); 
     }
-
+    console.log("User exists");
     res.status(200).json({ message: 'Login successful', user });
   } catch (error) {
     console.error('Error during login:', error);

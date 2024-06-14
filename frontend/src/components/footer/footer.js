@@ -2,7 +2,7 @@ import React from "react";
 import './footer.css'
 const Footer=()=>{
     return(
-        <div className="footer-cont">
+        <div className="footer-cont" id="footer">
             <div className="first">
                 <img src="spirit.png" alt="" className="spirit-logo"/>
                 <img src="Frame 49.png" alt="Copyright"  className="copyright"/>
@@ -13,22 +13,29 @@ const Footer=()=>{
                 </div>
 
             </div>
-            <div className="big-div"><div className="second">
+            <div className="big-div"><div className="second1">
                 <div className="quick">Quick Links</div>
                 <div className="links-div">
                 <div className="links"><a href="/#home">Home</a></div>
-                <div className="links"><a href="/#events">Events</a></div>
                 <div className="links"><a href="/#aboutus">About Us</a></div>
                 </div>
             </div>
-            <div className="second">
+            <div className="second2">
             <div className="quick">Contact</div>
+            <div className="contact">
                 <div className="links-div">
-                <div className="links">+91 98550505050</div>
-                <div className="links">Someone at Spirit</div>
-                
+                <div className="links">Harshitha</div> 
+                <div className="links">63055 82565</div>
+                <div className="links">h.rayi@iitg.ac.in</div>
                 </div>
-            </div></div>
+                <div className="links-div">
+                <div className="links">Yuvraj</div>
+                <div className="links">73005 05333</div>
+                <div className="links">yuvrajsingh@iitg.ac.in</div>
+                </div>
+                </div>
+            </div>
+        </div>
         </div>
     )
 }

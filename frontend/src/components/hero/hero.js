@@ -3,7 +3,7 @@ import './hero.css'
 const header = () => {
     return (
         <section className='Hero-wrap ' id="home">
-            <div className="texts">
+            <div className="texts animation">
                 <h1 className="small">IIT GUWAHATI'S</h1>
                  <h2 className='large'>SPIRIT</h2>
                 <p className="quote">Feel the energy ,Embrace the Spirit .</p>
