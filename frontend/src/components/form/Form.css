@@ -126,9 +126,9 @@
     position: absolute;
     z-index: 2;
     font-size:34vw;
-  padding-bottom: 40vw;
-  font-family: 'VVDS',sans-serif;
- letter-spacing: 10px;
+    padding-bottom: 40vw;
+    font-family: 'VVDS',sans-serif;
+   letter-spacing: 10px;
   
   }
   /* Add this CSS to your Form.css */
@@ -227,17 +227,17 @@
     padding-bottom: 150vw;
   }
 }
-  @media (min-width: 900px) {
+  @media (max-width: 900px) {
     
     .spirit{
       
       padding-bottom: 30vw;
     }
 }
-  @media (min-width: 1100px) {
+  @media (max-width: 1100px) {
     
     .spirit{
-      font-size: 30vw ;
+      font-size: 20vw ;
       padding-bottom: 25vw;
     }
 }

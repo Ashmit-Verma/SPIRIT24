@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 0;
+  margin-bottom: 10%;
 }
 
 
@@ -69,9 +69,8 @@
   /* Large enough to prevent clipping */
   height: 60%;
   /* Large enough to prevent clipping */
-  /* transform: translate(-50%, -50%); Center the image */
-  background: linear-gradient(rgba(235, 69, 0, 0.4), rgba(235, 69, 0, 0.3)),
-    url('/public/ballses.svg') center center no-repeat;
+  /* transform: translate(-50%, -50%); Center the image
+  background:url('/public/ballses.png') center center no-repeat; */
   background-size: contain;
   z-index: -1;
   animation: rotateBalls 5s linear infinite;
@@ -79,7 +78,7 @@
   /* Rotate around the center of the div */
 }
 
-@keyframes rotateBalls {
+/* @keyframes rotateBalls {
   0% {
     transform: rotate(0deg);
   }
@@ -87,7 +86,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 
 .quote {

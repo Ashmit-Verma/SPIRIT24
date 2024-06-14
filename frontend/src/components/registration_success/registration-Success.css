@@ -12,10 +12,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url('/public/ellipses.svg');
+  background-size: cover;
+  overflow: hidden;
   }
   
   .texts {
-    margin-top: 20%;
     margin-bottom: 10%;
     display: flex;
     flex-direction: column;
@@ -32,7 +34,7 @@
   
   .ca-program-message {
     font-family: 'VVDS', sans-serif;
-    font-size: 1em;
+    font-size: 2em;
     margin-top: 60px;
   }
   

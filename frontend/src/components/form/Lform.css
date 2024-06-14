@@ -2,7 +2,7 @@
 
 
   text-align: center;
-  margin-top: 10%;
+  padding-top: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@
   font-style: italic;
   font-size: 23em;
   padding-right: 4.5%;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 
@@ -208,7 +208,13 @@ small {
 small a {
   text-decoration: underline;
 }
-
+@media(max-width:1100px)
+{
+  .spirit
+  {
+    font-size: 25vw;
+  }
+}
 @media (max-width: 550px) {
   .Lform {
     border-radius: 20px;
