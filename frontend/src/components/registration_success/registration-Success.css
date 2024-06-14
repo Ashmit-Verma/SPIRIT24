@@ -1,6 +1,17 @@
 /* frontend/src/page/registrationSuccess.css */
+@font-face {
+  font-family: 'VVDS';
+  src: url('../fonts/VVDS-Fifties-Exp-Bold-Italic.otf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .Success-wrap {
-    margin-top: 3%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .texts {
@@ -8,45 +19,68 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 0;
   }
   
   .success-message {
     font-size: 2.5em;
-    font-style: italic;
+    font-family: 'VVDS', sans-serif;
     margin-bottom: 10px;
   }
   
-  .logged-in-message {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
   
   .ca-program-message {
+    font-family: 'VVDS', sans-serif;
     font-size: 1em;
-    margin-top: 20px;
+    margin-top: 60px;
   }
   
-  .texts a {
-    position: relative;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    color: white;
-    font-size: 12px;
-    background-color: black;
-    padding: 6px 26px;
-    border: none;
-    border-radius: 40px;
-  }
   
+
+  .congratulations-text {
+    overflow: visible;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VVDS', sans-serif;
+    font-size: 80px;
+    letter-spacing: 0.1px;
+    line-height: 1.1;
+    color: transparent;
+    -webkit-text-stroke: 4px #000000;
+  }
+
   @media (max-width: 1200px) {
     .Success-wrap {
-      margin-top: 5%;
+      margin-top: 10%;
     }
-  
-    .texts a {
-      font-size: 14px;
-      padding: 8px 30px;
+    
+    .congratulations-text
+    {
+      font-size: 60px;
     }
+    
+    .success-message
+    {
+      font-size: 2em;;
+    }
+
   }
+  @media (max-width: 720px) {
+    .Success-wrap {
+      margin-top: 15%;
+    }
+    
+    .congratulations-text
+    {
+      font-size: 40px;
+    }
+    
+    .success-message
+    {
+      font-size: 1em;;
+    }
+
+  }
+  
   

@@ -1,7 +1,15 @@
-
+@font-face {
+  font-family: 'VVDS';
+  src: url('../fonts/VVDS-Fifties-Exp-Bold-Italic.otf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .Hero-wrap {
   margin-top: 3%;
+  background-image: url('/public/ellipses.svg');
+  background-size: cover;
+  overflow: hidden;
 }
 
 
@@ -28,10 +36,12 @@
   font-size: 23em;
   padding: 0;
   margin: -50px;
-  background-image: url('/public/ellipses.svg');
+  /* background-image: url('/public/ellipses.svg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  font-family: 'VVDS',sans-serif;
+  letter-spacing: 30px;
 }
 
 
@@ -93,7 +103,7 @@
 
 @media (max-width: 768px) {
   .Hero-wrap {
-    margin-top: 5%;
+    margin-top: 9%;
   }
 
 
@@ -110,6 +120,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    letter-spacing: 10px;
   }
 
 
@@ -129,7 +140,7 @@
 
 @media (max-width: 480px) {
   .Hero-wrap {
-    margin-top: 7%;
+    margin-top: 11%;
   }
 
 

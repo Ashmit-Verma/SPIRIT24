@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color:#cb6351;  /* change color accordingly */
+    background:rgba(238, 111, 39);
 }
 
 .leaderboard-container {
