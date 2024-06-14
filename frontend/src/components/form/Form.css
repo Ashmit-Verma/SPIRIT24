@@ -131,6 +131,26 @@
  letter-spacing: 10px;
   
   }
+  /* Add this CSS to your Form.css */
+.suggestions {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: calc(100% - 30px); /* Adjust width according to the input field */
+  z-index: 1000;
+}
+
+.suggestion {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
   @media (max-width: 550px )  {
     .row {
         flex-direction: column;
