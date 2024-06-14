@@ -134,11 +134,13 @@
   /* Add this CSS to your Form.css */
 .suggestions {
   position: absolute;
-  max-height: 200px;
+  max-height: 150px;
   overflow-y: auto;
+  font-size: 13px;
   background-color: white;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  width: calc(100% - 30px); /* Adjust width according to the input field */
+  width: 70%; /* Adjust width according to the input field */
   z-index: 1000;
 }
 
@@ -154,6 +156,15 @@
   @media (max-width: 550px )  {
     .row {
         flex-direction: column;
+
+    }
+    .suggestions {
+     
+      max-height: 250px;
+      
+      
+      width: 77%; /* Adjust width according to the input field */
+     
     }
 
     .col {
