@@ -82,7 +82,7 @@ function Form() {
   };
 
   return (
-    <div className="App">
+    <div className="LApp animation">
       <h1 className='spirit'>SPIRIT</h1>
       <form onSubmit={handleSubmit}>
         <div className="underline-container">
