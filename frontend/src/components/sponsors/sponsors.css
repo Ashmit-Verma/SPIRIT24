@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "KumbhSans";
+    src: url("../fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
+    font-weight: 800;
+}
+
+.sponsorsMain{
+    padding:5%;
+}
+
+.sponsorHeader
+{
+    font-family: 'KumbhSans',sans-serif;
+    font-size: 60px;
+    font-weight: 50;
+    padding-bottom: 5%;
+    text-align: center;
+}
+.sponsors
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap:60px;
+}
+@media(max-width:450px){
+.sponsorHeader
+{
+    font-size: 40px;
+}
+}

@@ -50,7 +50,8 @@ const Faq = () => {
 
     return (
         <div className="faq-main" id="faq">
-            <div className="faq-title">FAQ's</div>
+            <div className="faq-title">
+                <h2>FAQ's</h2></div>
             <div className="faq-container">
             
             {faqItems.map((item, index) => (

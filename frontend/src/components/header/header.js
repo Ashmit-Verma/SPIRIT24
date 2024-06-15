@@ -26,7 +26,7 @@ const Header = () => {
                 </div>
                 <div className="points">
                     <a href="/#aboutus">About</a>
-                    <a href="">Sponsors</a>
+                    <a href="/#sponsors">Sponsors</a>
                     {/* <a href="/Leaderboard">Leaderboard</a> */}
                     <a href="/#faq">FAQ</a>
                     <a href="/#footer">Contact Us</a>
