@@ -4,7 +4,7 @@ services:
   backend:
     build:
       context: ./backend     # Path to the directory containing the Dockerfile for the backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile # Filename of the Dockerfile for the backend
     ports:
       - "4000:4000"
     env_file:
@@ -16,8 +16,8 @@ services:
 
   frontend:
     build:
-       context: ./frontend    # Path to the directory containing the Dockerfile for the frontend
-       dockerfile: Dockerfile
+      context: ./frontend    # Path to the directory containing the Dockerfile for the frontend
+      dockerfile: Dockerfile # Filename of the Dockerfile for the frontend
     ports:
       - "3000:3000"
     environment:
@@ -30,7 +30,7 @@ services:
   mysql:
     image: mysql:latest
     ports:
-      - "3307:3306"  # Change the host port to 3307
+      - "3307:3306"
     env_file:
       - ./backend/.env
     networks:
