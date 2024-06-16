@@ -3,9 +3,10 @@ import AdminJSExpress from '@adminjs/express';
 import AdminJSSequelize from '@adminjs/sequelize';
 import sequelize from './config/database.js';
 import User from './models/User.js';
-import bcrypt from 'bcrypt';
 import dotenv from "dotenv";
+import argon2 from 'argon2'; // Import argon2 library
 dotenv.config();
+
 // Initialize AdminJS with the Sequelize adapter
 AdminJS.registerAdapter(AdminJSSequelize);
 
@@ -36,8 +37,8 @@ const adminOptions = {
             before: async (request) => {
               console.log('Creating new user:', request.payload);
               if (request.payload.password) {
-                const salt = await bcrypt.genSalt(10);
-                request.payload.encryptedPassword = await bcrypt.hash(request.payload.password, salt);
+                const hashedPassword = await argon2.hash(request.payload.password); // Hash password using argon2
+                request.payload.encryptedPassword = hashedPassword;
                 // request.payload.password = undefined;
               }
               console.log('Processed new user:', request.payload);
@@ -48,8 +49,8 @@ const adminOptions = {
             before: async (request) => {
               console.log('Editing user:', request.payload);
               if (request.payload.password) {
-                const salt = await bcrypt.genSalt(10);
-                request.payload.encryptedPassword = await bcrypt.hash(request.payload.password, salt);
+                const hashedPassword = await argon2.hash(request.payload.password); // Hash password using argon2
+                request.payload.encryptedPassword = hashedPassword;
                 request.payload.password = undefined;
               }
               console.log('Processed edit user:', request.payload);

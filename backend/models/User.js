@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
-import bcrypt from "bcrypt";
+import argon2 from "argon2";
+
 const User = sequelize.define(
   "User",
   {
@@ -43,13 +44,13 @@ const User = sequelize.define(
   {
     hooks: {
       beforeCreate: async (user) => {
-        const salt = await bcrypt.genSalt(10);
-        user.password = await bcrypt.hash(user.password, salt);
+        const hashedPassword = await argon2.hash(user.password);
+        user.password = hashedPassword;
       },
       beforeUpdate: async (user) => {
         if (user.changed("password")) {
-          const salt = await bcrypt.genSalt(10);
-          user.password = await bcrypt.hash(user.password, salt);
+          const hashedPassword = await argon2.hash(user.password);
+          user.password = hashedPassword;
         }
       },
     },

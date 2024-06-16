@@ -4,7 +4,6 @@ import cors from "cors";
 import http from "http";
 import dotenv from "dotenv";
 import sequelize from "./config/database.js";
-import bcrypt from "bcrypt";
 // AdminJS
 // import adminRouter from "./admin_panel/adminconfig.js";
 import { adminJs, router as adminRouter } from './admin.js';

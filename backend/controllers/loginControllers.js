@@ -1,5 +1,5 @@
 import User from "../models/User.js";
-import bcrypt from "bcrypt";
+import argon2 from 'argon2'; // Import argon2 library
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
@@ -37,7 +37,7 @@ export const login= async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const isPasswordValid = await argon2.verify(user.password, password); // Verify password using argon2
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
