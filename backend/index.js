@@ -25,7 +25,9 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://timely-mochi-34f86a.netlify.app'
+}));
 app.use("/api", userRoutes);// user routes
 app.use("/signup", signRoute);// signIn route
 // app.use("/admin", adminRouter);// adminjs routes
