@@ -38,7 +38,9 @@ app.use("/login",loginRoute);//login routes
 app.use(adminJs.options.rootPath, adminRouter);
 
 
-
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 
 
 //running server
