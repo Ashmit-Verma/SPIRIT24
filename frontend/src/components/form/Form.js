@@ -63,7 +63,7 @@ function Form() {
 
     try {
       // const response = await axios.post('http://localhost:4000/signup', {
-        const response = await axios.post('http://localhost:4000/signup', {
+        const response = await axios.post('https://spirit-24-ecru.vercel.app/signup', {
         name: formData.name,
         email: formData.email,
         mobile: formData.contact,

@@ -11,7 +11,7 @@ function OtpForm() {
     const handleOtpSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('http://localhost:4000/signup/verifyOtp', { otp });
+        const response = await axios.post('https://spirit-24-ecru.vercel.app//signup/verifyOtp', { otp });
         if (response.status === 200) {
           navigate('/login');
         } else {
