@@ -25,11 +25,12 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(express.json());
-app.use(cors({
-  origin: 'https://timely-mochi-34f86a.netlify.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+const corsOptions = {
+  origin: 'https://667006caf9e524323bd3e0f9--timely-mochi-34f86a.netlify.app/',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 app.use("/api", userRoutes);// user routes
 app.use("/signup", signRoute);// signIn route
 // app.use("/admin", adminRouter);// adminjs routes
