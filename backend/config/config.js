@@ -5,7 +5,7 @@ export const development = {
   username: process.env.user,
   password: process.env.password,
   database: process.env.database,
-  host: "mysql",
+  host: "localhost",
   dialect: "mysql",
 };
 
