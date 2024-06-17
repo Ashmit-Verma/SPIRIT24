@@ -26,7 +26,9 @@ const server = http.createServer(app);
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://timely-mochi-34f86a.netlify.app'
+  origin: 'https://timely-mochi-34f86a.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use("/api", userRoutes);// user routes
 app.use("/signup", signRoute);// signIn route
