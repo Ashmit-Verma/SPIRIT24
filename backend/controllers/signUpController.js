@@ -44,6 +44,7 @@ export const signup= async (req, res) => {
 
 export const verifyOtp=async (req,res)=>{
     const { otp } = req.body;
+    console.log(otp);
   const verified = speakeasy.totp.verify({
     secret: otpSecret.base32,
     encoding: 'base32',
