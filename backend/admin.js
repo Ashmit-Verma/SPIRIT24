@@ -5,6 +5,7 @@ import sequelize from './config/database.js';
 import User from './models/User.js';
 import dotenv from "dotenv";
 import argon2 from 'argon2'; // Import argon2 library
+
 dotenv.config();
 
 // Initialize AdminJS with the Sequelize adapter
@@ -39,7 +40,7 @@ const adminOptions = {
               if (request.payload.password) {
                 const hashedPassword = await argon2.hash(request.payload.password); // Hash password using argon2
                 request.payload.encryptedPassword = hashedPassword;
-                // request.payload.password = undefined;
+                request.payload.password = undefined;
               }
               console.log('Processed new user:', request.payload);
               return request;
@@ -68,11 +69,12 @@ const adminJs = new AdminJS(adminOptions);
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   authenticate: async (email, password) => {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-        return { email: process.env.ADMIN_EMAIL };
-      }
-      return null;
-    },
-    cookiePassword:process.env.COOKIE_SECRET,
+      console.log("Correct");
+      return { email: process.env.ADMIN_EMAIL };
+    }
+    return null;
+  },
+  cookiePassword: process.env.COOKIE_SECRET,
 });
 
 export { adminJs, router };

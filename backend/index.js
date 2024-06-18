@@ -1,52 +1,67 @@
-// dependencies
-import express from "express";
-import cors from "cors";
-import http from "http";
-import dotenv from "dotenv";
-import sequelize from "./config/database.js";
-// AdminJS
-// import adminRouter from "./admin_panel/adminconfig.js";
+import express from 'express';
+import cors from 'cors';
+import http from 'http';
+import dotenv from 'dotenv';
+import mysql from 'mysql2/promise';
+import session from 'express-session';
+import MySQLStore from 'express-mysql-session';
+import sequelize from './config/database.js';
 import { adminJs, router as adminRouter } from './admin.js';
-
-// routes
-import profileRoute from "./routes/profileRoute.js";
-import signRoute from "./routes/signUpRoute.js";
-import userRoutes from "./routes/userRoutes.js";
-import loginRoute from "./routes/loginRoute.js"
-
-
-import User from './models/User.js';
-
+import profileRoute from './routes/profileRoute.js';
+import signRoute from './routes/signUpRoute.js';
+import userRoutes from './routes/userRoutes.js';
+import loginRoute from './routes/loginRoute.js';
 
 dotenv.config();
-
 
 const app = express();
 const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: 'https://667006caf9e524323bd3e0f9--timely-mochi-34f86a.netlify.app/',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: 'https://6671a8ba803efa009fdbf460--timely-mochi-34f86a.netlify.app',
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
-app.use("/api", userRoutes);// user routes
-app.use("/signup", signRoute);// signIn route
-// app.use("/admin", adminRouter);// adminjs routes
-app.use("/login",loginRoute);//login routes
-app.use(adminJs.options.rootPath, adminRouter);
 
+// Configure the MySQL session store
+const sessionStore = new MySQLStore({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+});
+
+app.use(session({
+  secret: process.env.SESSION_SECRET, 
+  resave: false, 
+  saveUninitialized: false, 
+  store: sessionStore, 
+  cookie: {
+    secure: process.env.NODE_ENV === 'production', 
+    httpOnly: true,
+    maxAge: 3600000, 
+  },
+}));
+
+app.use('/api', userRoutes);
+app.use('/signup', signRoute);
+app.use('/login', loginRoute);
+app.use(adminJs.options.rootPath, adminRouter);
 
 app.get('/', (req, res) => {
   res.send('Backend is running');
 });
 
-
-//running server
 server.listen(process.env.PORT, async () => {
   console.log(`Server running on port ${process.env.PORT}`);
-  console.log(`AdminJS running on http://localhost:${process.env.PORT}`);
-  await sequelize.sync({ alter: true });
-  console.log("Database Connected!");
+  console.log(`AdminJS running on http://localhost:${process.env.PORT}${adminJs.options.rootPath}`);
+  try {
+    await sequelize.authenticate();
+    console.log('Connection to the database has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 });
