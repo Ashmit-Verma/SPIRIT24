@@ -40,12 +40,6 @@ const User = sequelize.define(
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
-    otpSecret: {
-      type: DataTypes.STRING, // Store OTP secret here
-    },
-    pendingUserData: {
-      type: DataTypes.JSON, // Store pending user data here
-    },
   },
   {
     hooks: {

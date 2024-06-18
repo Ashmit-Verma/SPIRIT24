@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import mysql from 'mysql2/promise';
 import session from 'express-session'; // Import express-session
 import MySQLStore from 'express-mysql-session'; // Import express-mysql-session for storing sessions in MySQL
-
+import sequelize from './config/database.js';
 import { adminJs, router as adminRouter } from './admin.js';
 import profileRoute from './routes/profileRoute.js';
 import signRoute from './routes/signUpRoute.js';
@@ -59,30 +59,37 @@ app.get('/', (req, res) => {
   res.send('Backend is running');
 });
 
-let connection;
-async function connectToDatabase() {
-  try {
-    connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-      connectTimeout: 60000,
-    });
-    console.log('Database Connected!');
-  } catch (err) {
-    console.error('Error connecting to MySQL:', err.stack);
-    process.exit(1);
-  }
-}
+// let connection;
+// async function connectToDatabase() {
+//   try {
+//     connection = await mysql.createConnection({
+//       host: process.env.DB_HOST,
+//       port: process.env.DB_PORT,
+//       user: process.env.DB_USER,
+//       password: process.env.DB_PASSWORD,
+//       database: process.env.DB_NAME,
+//       ssl: {
+//         require: true,
+//         rejectUnauthorized: false,
+//       },
+//       connectTimeout: 60000,
+//     });
+//     console.log('Database Connected!');
+//   } catch (err) {
+//     console.error('Error connecting to MySQL:', err.stack);
+//     process.exit(1);
+//   }
+// }
 
 server.listen(process.env.PORT, async () => {
   console.log(`Server running on port ${process.env.PORT}`);
   console.log(`AdminJS running on http://localhost:${process.env.PORT}`);
-  await connectToDatabase();
+  sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection to the database has been established successfully.');
+  })
+  .catch((error) => {
+    console.error('Unable to connect to the database:', error);
+  });
 });
