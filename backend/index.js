@@ -3,8 +3,8 @@ import cors from 'cors';
 import http from 'http';
 import dotenv from 'dotenv';
 import mysql from 'mysql2/promise';
-import session from 'express-session'; // Import express-session
-import MySQLStore from 'express-mysql-session'; // Import express-mysql-session for storing sessions in MySQL
+import session from 'express-session';
+import MySQLStore from 'express-mysql-session';
 import sequelize from './config/database.js';
 import { adminJs, router as adminRouter } from './admin.js';
 import profileRoute from './routes/profileRoute.js';
@@ -25,12 +25,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Session middleware configuration
+// Configure the MySQL session store
 const sessionStore = new MySQLStore({
-  /* 
-    Configure your MySQL connection details here for session store
-    See the documentation of express-mysql-session for more details
-  */
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
@@ -39,14 +35,14 @@ const sessionStore = new MySQLStore({
 });
 
 app.use(session({
-  secret: process.env.SESSION_SECRET, // Add a secret key for session encryption
-  resave: false, // Set to false to avoid session saving on every request
-  saveUninitialized: false, // Set to false to prevent saving uninitialized sessions
-  store: sessionStore, // Use MySQLStore for session storage
+  secret: process.env.SESSION_SECRET, 
+  resave: false, 
+  saveUninitialized: false, 
+  store: sessionStore, 
   cookie: {
-    secure: true, // Set to true if your app is served over HTTPS
+    secure: process.env.NODE_ENV === 'production', 
     httpOnly: true,
-    maxAge: 3600000, // Session expiration time (in milliseconds), adjust as needed
+    maxAge: 3600000, 
   },
 }));
 
@@ -59,37 +55,13 @@ app.get('/', (req, res) => {
   res.send('Backend is running');
 });
 
-// let connection;
-// async function connectToDatabase() {
-//   try {
-//     connection = await mysql.createConnection({
-//       host: process.env.DB_HOST,
-//       port: process.env.DB_PORT,
-//       user: process.env.DB_USER,
-//       password: process.env.DB_PASSWORD,
-//       database: process.env.DB_NAME,
-//       ssl: {
-//         require: true,
-//         rejectUnauthorized: false,
-//       },
-//       connectTimeout: 60000,
-//     });
-//     console.log('Database Connected!');
-//   } catch (err) {
-//     console.error('Error connecting to MySQL:', err.stack);
-//     process.exit(1);
-//   }
-// }
-
 server.listen(process.env.PORT, async () => {
   console.log(`Server running on port ${process.env.PORT}`);
-  console.log(`AdminJS running on http://localhost:${process.env.PORT}`);
-  sequelize
-  .authenticate()
-  .then(() => {
+  console.log(`AdminJS running on http://localhost:${process.env.PORT}${adminJs.options.rootPath}`);
+  try {
+    await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error('Unable to connect to the database:', error);
-  });
+  }
 });
