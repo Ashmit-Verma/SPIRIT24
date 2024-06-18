@@ -26,7 +26,7 @@ const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: 'https://667006caf9e524323bd3e0f9--timely-mochi-34f86a.netlify.app',
+  origin: 'https://667172b708f31714be02706e--timely-mochi-34f86a.netlify.app',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
