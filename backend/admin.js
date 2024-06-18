@@ -68,6 +68,7 @@ const adminJs = new AdminJS(adminOptions);
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   authenticate: async (email, password) => {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+      console.log("Correct");
         return { email: process.env.ADMIN_EMAIL };
       }
       return null;
