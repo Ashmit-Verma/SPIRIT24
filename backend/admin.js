@@ -66,14 +66,15 @@ const adminOptions = {
 const adminJs = new AdminJS(adminOptions);
 
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
-  authenticate: async (email, password) => {
+  authenticate: async (email, password, onSuccess, onFailure) => {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       console.log("Correct");
-        return { email: process.env.ADMIN_EMAIL };
-      }
-      return null;
-    },
-    cookiePassword:process.env.COOKIE_SECRET,
+      onSuccess({ email: process.env.ADMIN_EMAIL }); // Redirect on successful authentication
+    } else {
+      onFailure(); // Call onFailure if authentication fails
+    }
+  },
+  cookiePassword: process.env.COOKIE_SECRET,
 });
 
 export { adminJs, router };
