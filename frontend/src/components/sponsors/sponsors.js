@@ -7,6 +7,7 @@ const sponsors = () => {
                 <h2>Sponsors</h2>
                 </div>
             <div className='sponsors'>
+            <img src="languify.png"></img>
             <img src="ProgrammingPathsala.png"></img>
             <img src="GiveMyCertificates.png"></img>
             <img src="InterviewBuddy.png"></img>

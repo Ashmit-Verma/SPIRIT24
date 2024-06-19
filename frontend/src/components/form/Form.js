@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css';
 import { validate } from './validate';
+import universities from './universities.json'; // Import local JSON data
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -17,8 +18,23 @@ function Form() {
   const [errors, setErrors] = useState({});
   const [collegeSuggestions, setCollegeSuggestions] = useState([]);
   const navigate = useNavigate();
+  const suggestionBoxRef = useRef(null);
 
-  const handleChange = async (e) => {
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (suggestionBoxRef.current && !suggestionBoxRef.current.contains(event.target)) {
+        setCollegeSuggestions([]);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -29,11 +45,12 @@ function Form() {
     if (name === 'college') {
       if (value.length > 0) {
         try {
-          const response = await fetch(`http://universities.hipolabs.com/search?name=${value}&country=india`);
-          const data = await response.json();
-          setCollegeSuggestions(data);
+          const filteredData = universities.filter((university) =>
+            university.name.toLowerCase().includes(value.toLowerCase())
+          );
+          setCollegeSuggestions(filteredData);
         } catch (error) {
-          console.error('Error fetching college suggestions:', error);
+          console.error('Error filtering college suggestions:', error);
           setCollegeSuggestions([]);
         }
       } else {
@@ -126,7 +143,7 @@ function Form() {
             />
             {errors.college && <span className="error">{errors.college}</span>}
             {collegeSuggestions.length > 0 && (
-              <div className="suggestions">
+              <div className="suggestions" ref={suggestionBoxRef}>
                 {collegeSuggestions.map((college, index) => (
                   <div
                     key={index}
