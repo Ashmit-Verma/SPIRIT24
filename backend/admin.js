@@ -5,6 +5,7 @@ import AdminJSExpress from '@adminjs/express';
 import AdminJSSequelize from '@adminjs/sequelize';
 import sequelize from './config/database.js';
 import User from './models/User.js';
+import Opinion from './models/opinion.js'; // Import the Opinion model
 import dotenv from 'dotenv';
 import argon2 from 'argon2'; // Import argon2 library
 
@@ -55,11 +56,21 @@ const adminOptions = {
               if (request.payload.password) {
                 const hashedPassword = await argon2.hash(request.payload.password); // Hash password using argon2
                 request.payload.encryptedPassword = hashedPassword;
-                // request.payload.password = undefined;
+                request.payload.password = undefined;
               }
               console.log('Processed edit user:', request.payload);
               return request;
             },
+          },
+        },
+      },
+    },
+    {
+      resource: Opinion, // Add the Opinion model here
+      options: {
+        properties: {
+          message: {
+            type: 'richtext', // Assuming you want a rich text editor for the message field
           },
         },
       },
@@ -79,7 +90,7 @@ const sessionOptions = {
   secret: process.env.COOKIE_SECRET,
   resave: false, // Don't save session if unmodified
   saveUninitialized: false, // Don't create session until something stored
-  cookie: { secure: true},
+  cookie: { secure: true },
 };
 
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {

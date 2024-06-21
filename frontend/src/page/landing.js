@@ -6,7 +6,8 @@ import Footer from "../components/footer/footer.js";
 import Faq from "../components/FAQ/faq.js";
 import Gallery from '../components/gallery/gallery.js';
 import Sponsors from '../components/sponsors/sponsors.js';
-// import Leaderboard from '../components/Leaderboard/Leaderboard.js';
+import Whyca from '../components/Whyca/Whyca.js';
+import Caresponsibility from '../components/responsibility/responsibility.js';
 
 const Landing = () => {
   return (
@@ -14,6 +15,8 @@ const Landing = () => {
       <Header />
       <Hero />
       <Welcome />
+      <Whyca/>
+      <Caresponsibility/>
       <Gallery />
       <Faq />
       <Sponsors/>

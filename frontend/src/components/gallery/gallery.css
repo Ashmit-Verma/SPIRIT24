@@ -120,4 +120,7 @@ h1 {
     height: 55vw;
     transform: scale(1.1); /* Increase size on hover */
   }
+   h1{
+    font-size: 40px;
+  }
 }

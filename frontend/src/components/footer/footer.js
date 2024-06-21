@@ -1,6 +1,33 @@
 import React from "react";
+import  { useState } from 'react';
+import axios from 'axios';
 import './footer.css'
 const Footer=()=>{
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:4000/opinion', formData);
+            console.log(response.data);
+            alert("Message recieved successfully");
+        } catch (error) {
+            console.error(error);
+            alert("Message not recieved due to some error");
+        }
+    };
     return(
         <div className="footer-cont" id="footer">
             <div className="first">
@@ -21,20 +48,17 @@ const Footer=()=>{
                 </div>
             </div>
             <div className="second2">
-            <div className="quick">Contact</div>
-            <div className="contact">
-                <div className="links-div">
-                <div className="links">Harshitha</div> 
-                <div className="links">63055 82565</div>
-                <div className="links">h.rayi@iitg.ac.in</div>
-                </div>
-                <div className="links-div">
-                <div className="links">Yuvraj</div>
-                <div className="links">73005 05333</div>
-                <div className="links">yuvrajsingh@iitg.ac.in</div>
-                </div>
-                </div>
-            </div>
+            <div className="quick">Your Opinion matters</div>
+            <form class="opinion" onSubmit={handleSubmit}>
+                    <label>Name</label>
+                    <input className="inputbox" type="text" name="name" value={formData.name} onChange={handleChange} />
+                    <label>Email</label>
+                    <input className="inputbox" type="email" name="email" value={formData.email} onChange={handleChange} />
+                    <label>Message</label>
+                    <textarea className="inputbox" name="message" value={formData.message} onChange={handleChange}></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         </div>
         </div>
     )

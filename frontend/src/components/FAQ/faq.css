@@ -27,7 +27,10 @@
     width: 90%; /* Set a consistent width for all accordion items */
     margin: 0 auto; /* Center the accordion items */
 }
-
+.faq-title
+{
+    font-family:'KumbhSans',sans-serif;
+}
 .accordion-title {
     background-color: #E57847;
     font-family:'KumbhSans' !important ;
@@ -94,7 +97,7 @@
     font-size: 8vh; /* Reduced font size */
 }
 
-@media only screen and (max-width: 768px) {
+@media(max-width: 768px) {
     .faq-container {
         row-gap: 1vh; /* Further reduced gap for mobile */
     }
@@ -104,7 +107,7 @@
     }
 
     .accordion-title {
-        font-size: 3vh; /* Reduced font size for mobile */
+        font-size: 18px; /* Reduced font size for mobile */
     }
 
     .accordion-content {
@@ -113,6 +116,9 @@
 
     .faq-title {
         justify-content: center;
-        font-size: 6vh; /* Reduced font size for mobile */
+ /* Reduced font size for mobile */
+    }
+    h2{
+        font-size: 40px;
     }
 }

@@ -11,6 +11,8 @@ import profileRoute from './routes/profileRoute.js';
 import signRoute from './routes/signUpRoute.js';
 import userRoutes from './routes/userRoutes.js';
 import loginRoute from './routes/loginRoute.js';
+import opinionRoute from './routes/opinionRoute.js'
+
 
 dotenv.config();
 
@@ -20,6 +22,7 @@ const server = http.createServer(app);
 app.use(express.json());
 const corsOptions = {
   origin: 'https://66725406a47af8a1d0d36b4f--timely-mochi-34f86a.netlify.app',
+  origin:'http://localhost:3000',
   optionsSuccessStatus: 200,
 };
 
@@ -49,6 +52,7 @@ app.use(session({
 app.use('/api', userRoutes);
 app.use('/signup', signRoute);
 app.use('/login', loginRoute);
+app.use("/opinion",opinionRoute);
 app.use(adminJs.options.rootPath, adminRouter);
 
 app.get('/', (req, res) => {
@@ -61,6 +65,8 @@ server.listen(process.env.PORT, async () => {
   try {
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
+    await sequelize.sync({ alter: true });
+    console.log('All models were synchronized successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }

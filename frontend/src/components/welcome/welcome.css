@@ -53,3 +53,9 @@
     margin-top: 5%;;
 }
 }
+@media(max-width:600px)
+{
+    .heading1{
+        font-size: 40px;
+    }
+}
