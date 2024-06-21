@@ -4,8 +4,10 @@ const header = () => {
     return (
         <section className='Hero-wrap ' id="home">
             <div className="texts animation">
-                <h1 className="small">IIT GUWAHATI'S</h1>
-                 <h2 className='large'>SPIRIT</h2>
+                <div>
+                 <h2 className='large'>CAMPUS AMBASSADOR</h2>
+                 <h2 className='large'>PROGRAM SPIRIT'24</h2>   
+                </div>
                 <p className="quote">Feel the energy ,Embrace the Spirit .</p>
 
                 <a href="/signup" className="signup">Sign up</a>

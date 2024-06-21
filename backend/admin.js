@@ -1,3 +1,5 @@
+import session from 'express-session';
+import SequelizeStore from 'connect-session-sequelize';
 import AdminJS from 'adminjs';
 import AdminJSExpress from '@adminjs/express';
 import AdminJSSequelize from '@adminjs/sequelize';
@@ -67,10 +69,16 @@ const adminOptions = {
 
 const adminJs = new AdminJS(adminOptions);
 
+const SequelizeSessionStore = SequelizeStore(session.Store);
+const sessionStore = new SequelizeSessionStore({
+  db: sequelize,
+});
+
 const sessionOptions = {
+  store: sessionStore,
+  secret: process.env.COOKIE_SECRET,
   resave: false, // Don't save session if unmodified
   saveUninitialized: false, // Don't create session until something stored
-  secret: process.env.COOKIE_SECRET,
   cookie: { secure: process.env.NODE_ENV === 'production' },
 };
 
@@ -84,5 +92,8 @@ const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   },
   cookiePassword: process.env.COOKIE_SECRET,
 }, null, sessionOptions);
+
+// Sync session store with database
+sessionStore.sync();
 
 export { adminJs, router };
