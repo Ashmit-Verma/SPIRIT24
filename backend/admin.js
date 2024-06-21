@@ -79,7 +79,7 @@ const sessionOptions = {
   secret: process.env.COOKIE_SECRET,
   resave: false, // Don't save session if unmodified
   saveUninitialized: false, // Don't create session until something stored
-  cookie: { secure: process.env.NODE_ENV === 'production' },
+  cookie: { secure: true},
 };
 
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
