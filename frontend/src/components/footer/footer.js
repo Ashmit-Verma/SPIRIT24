@@ -20,7 +20,7 @@ const Footer=()=>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/opinion', formData);
+            const response = await axios.post('https://spirit-kvql.onrender.com/opinion', formData);
             console.log(response.data);
             alert("Message recieved successfully");
         } catch (error) {
