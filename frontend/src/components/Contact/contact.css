@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "KumbhSans";
+    src: url("../fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
+    font-weight: 800;
+}
+.contactdiv
+{
+ padding:50px;
+
+}
+.contactdiv2{
+    display: flex;
+}
+.leftest
+{
+    font-size: 60px;
+    font-family: 'KumbhSans',sans-serif;
+    margin: 10px;
+}
+.rightest
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'KumbhSans',sans-serif;
+}
+.cont{
+padding:20px;
+margin-left: 90px;
+}

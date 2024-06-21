@@ -5,45 +5,58 @@
 }
     
 .sponsorsMain {
-    background-color: #1e1e1e;
-    padding: 5%;
+    text-align: center;
+    padding: 20px;
+    background-color: #141414;
 }
 
 .sponsorHeader {
-    font-family: 'KumbhSans', sans-serif;
-    color: #ff6c1a;
-    font-size: 60px;
-    font-weight: 50;
-    padding-bottom: 5%;
-    text-align: center;
+    margin-bottom: 20px;
+    color:#E57847;
+    font-family: 'KumbhSans',sans-serif;
+    font-size: 40px;
 }
 
 .sponsors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    justify-items: center;
     align-items: center;
-    gap:300px; /* Center the images horizontally */ /* Adjust the gap between images */
 }
 
-.sponsors img {
+.sponsors a img {
     max-width: 100%;
-    /* Ensure images don't exceed their container's width */
+    height: auto;
+    display: block;
 }
-
-@media (max-width: 768px) {
-
-    .sponsors img {
-        width: 45%; /* Set width to occupy almost half of the container */
-    }
+@media(max-width:1430px)
+{
+    .sponsors{
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      }  
 }
-
-@media (max-width: 450px) {
-    .sponsorHeader {
-        font-size: 40px;
-    }
-
-    .sponsors img {
-        width: 100%; /* Set width to occupy full width */
-    }
+@media(max-width:1140px)
+{
+  .sponsors{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }  
+}
+@media(max-width:983px)
+{
+  .sponsors{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }  
+}
+@media(max-width:570px)
+{
+  .sponsors{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }  
+}
+@media(max-width:470px)
+{
+  .sponsors{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }  
 }

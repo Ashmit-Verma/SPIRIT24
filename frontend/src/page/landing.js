@@ -8,6 +8,7 @@ import Gallery from '../components/gallery/gallery.js';
 import Sponsors from '../components/sponsors/sponsors.js';
 import Whyca from '../components/Whyca/Whyca.js';
 import Caresponsibility from '../components/responsibility/responsibility.js';
+import Widget from '../components/Contact/contact.js';
 
 const Landing = () => {
   return (
@@ -18,6 +19,7 @@ const Landing = () => {
       <Whyca/>
       <Caresponsibility/>
       <Gallery />
+      <Widget/>
       <Faq />
       <Sponsors/>
       <Footer />
