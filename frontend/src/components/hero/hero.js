@@ -8,6 +8,8 @@ const header = () => {
                  <h2 className='large'>CAMPUS AMBASSADOR</h2>
                  <h2 className='large'>PROGRAM SPIRIT'24</h2>   
                 </div>
+                <p className='slogan'>Advertise | Organise | Conduct | Coordinate</p>
+                <p className='tagline'>With the vision to bring out the true Leader in you Spirit IIT Guwahati, presents the<br/> Campus Ambassador Program</p>
                 <a href="/signup" className="signup">Sign up</a>
               </div>
         </section>

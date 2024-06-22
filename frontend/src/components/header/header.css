@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 .navbar{
   position: fixed;
   width: 80vw;
   margin-top: 30px;
-  height: 40px;
+  height: 50px;
   background-color:#E5E5E5;
   display: flex;
   justify-content: space-between;
@@ -29,7 +35,7 @@
 }
 .points{
 display: inline;
-
+font-family: 'Robotics',sans-serif;
 }
 .login
 {
@@ -49,6 +55,7 @@ display: inline;
   border-radius: 40px;
   margin-right: 1em;
   overflow: visible;
+  font-family: 'Robotics',sans-serif;
 }
 
 body{

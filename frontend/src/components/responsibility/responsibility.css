@@ -48,6 +48,13 @@
 @media (max-width:350px) {
     .card1{width: 90vw;}
 }
+@media (max-width:768px)
+{
+  .card1 h2
+  {
+    font-size: 25px;
+  }
+}
 
 .tracking-in-contract {
 	-webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;

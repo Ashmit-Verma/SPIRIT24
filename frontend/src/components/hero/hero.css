@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .Hero-wrap {
   margin-top: 3%;
@@ -34,7 +40,7 @@
 
 .inner-div{
   margin-top: 10%;
-  height: 30vw;
+  height: 25vw;
   width: 100%;
   text-align: center;
   display: flex;
@@ -111,14 +117,24 @@
   margin-top: 2%;
   margin-bottom: 1%;
   color: white;
-  font-size: 12px;
+  font-size: 18px;
   background-color: black;
   padding: 6px 26px;
   border: none;
   border-radius: 40px;
 }
 
-
+.slogan{
+  color:white;
+  font-family: 'Inter',sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.tagline{
+  font-family: 'Inter',sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
 @media (max-width: 1200px) {
   .Hero-wrap {
     margin-top: 5%;
@@ -148,12 +164,21 @@
 
 
   .texts a {
-    font-size: 14px;
+    font-size: 18px;
     padding: 8px 30px;
   }
 }
 
-
+@media(max-width:1000px)
+{
+  .slogan{
+    font-size: 18px;
+  }
+  .tagline
+  {
+    font-size:18px;
+  }
+}
 
 
 @media (max-width: 768px) {
@@ -188,12 +213,24 @@
     font-size: 14px;
     padding: 8px 30px;
   }
+  .slogan
+  {
+    font-size: 14px;
+  }
+  .tagline
+  {
+    font-size:14px;
+  }
 }
 
 
 
 
 @media (max-width: 600px) {
+  .inner-div
+  {
+    height:120px;
+  }
   .Hero-wrap {
     margin-top: 11%;
   }
@@ -224,5 +261,16 @@
   .texts a {
     font-size: 16px;
     padding: 10px 35px;
+  }
+}
+@media(max-width:420px)
+{
+  .slogan
+  {
+    font-size: 10px;
+  }
+  .tagline
+  {
+    font-size: 10px ;
   }
 }
