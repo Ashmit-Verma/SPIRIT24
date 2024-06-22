@@ -37,6 +37,7 @@ const Footer=()=>{
                     <a href="https://www.instagram.com/spirit_iitguwahati/" target="_blank"><img src="insta.png" alt=""  className="media-img"/></a>
                     <a href="https://www.youtube.com/@spiritiitguwahati2541" target="_blank"><img src="youtube.png" alt="" className="media-img" /></a>
                     <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="fb.png" alt="" className="media-img" /></a>
+                    {/* <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="in.png" alt="" className="media-img" /></a> */}
                 </div>
 
             </div>
@@ -45,6 +46,8 @@ const Footer=()=>{
                 <div className="links-div">
                 <div className="links"><a href="/#home">Home</a></div>
                 <div className="links"><a href="/#aboutus">About Us</a></div>
+                <div className="links"><a href="/#sponsors">Sponsors</a></div>
+                <div className="links"><a href="/#gallery">Gallery</a></div>
                 </div>
             </div>
             <div className="second2">
