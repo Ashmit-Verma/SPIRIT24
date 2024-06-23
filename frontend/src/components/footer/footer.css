@@ -142,7 +142,6 @@ button:hover {
     }
     .spirit-logo{
         width: 60vw;
-        height: 10vh;
         object-fit: contain;
     }
     
@@ -172,7 +171,6 @@ button:hover {
         
         width: 65vw;
         /* margin-top: 5vh; */
-        height: 5vh;
         object-fit: contain;
         margin-top: 0;
     }

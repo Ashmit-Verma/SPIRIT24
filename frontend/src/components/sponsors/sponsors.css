@@ -3,11 +3,17 @@
     src: url("../fonts/KumbhSans-VariableFont_YOPQ,wght.ttf");
     font-weight: 800;
 }
-    
+
+@font-face {
+  font-family: "Robo";
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: 800;
+}
 .sponsorsMain {
     text-align: center;
     padding: 20px;
     background-color: #141414;
+    padding-bottom: 40px;
 }
 
 .sponsorHeader {
@@ -16,7 +22,11 @@
     font-family: 'KumbhSans',sans-serif;
     font-size: 40px;
 }
-
+.spon{
+  color:white;
+  font-size: 16px;
+  font-family: 'Robo',sans-serif;
+}
 .sponsors {
     display: grid;
     gap: 20px;

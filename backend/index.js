@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: ['https://66755f82769ada60d858df0e--timely-mochi-34f86a.netlify.app'],
+  origin: ['https://6677c888d230f53f2f00e6de--timely-mochi-34f86a.netlify.app'],
   optionsSuccessStatus: 200,
 };
 
