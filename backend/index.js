@@ -45,11 +45,7 @@ sessionStore.on('connection', () => {
 });
 
 // Log session store sync result
-sessionStore.sync().then(() => {
-  console.log('Session store synced successfully');
-}).catch((error) => {
-  console.error('Failed to sync session store:', error);
-});
+
 
 app.use(session({
   secret: process.env.SESSION_SECRET, 
