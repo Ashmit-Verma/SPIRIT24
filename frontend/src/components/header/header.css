@@ -29,7 +29,7 @@
 
 }
 .h-wrap a{
-  font-size: 14px;
+  font-size: 24px;
   padding: 10 20px;
   text-decoration: none;
 }
@@ -42,14 +42,14 @@ font-family: 'Robotics',sans-serif;
   overflow: visible;
 }
 .points a {
-  margin-right: 20px;  
+  margin-right: 35px;  
 }
 
 .log{
   font-size: 10px;
   margin-top: 1%;
   color: black;
-  background-color: #FF4F00;
+  background-color: rgba(238, 111, 39);
   padding: 10px 26px;
   border: none;
   border-radius: 40px;

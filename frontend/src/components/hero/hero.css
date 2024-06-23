@@ -16,6 +16,8 @@
   background-image: url('/public/ellipses.svg');
   background-size: cover;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center
 }
 
 

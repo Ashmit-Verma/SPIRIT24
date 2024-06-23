@@ -10,16 +10,16 @@ import './contact.css';
             </div>
             <div className="rightest">
               <div className="cont">
-                <p >Harshitha</p>
+                <p ><strong>Harshitha</strong></p>
                 <p>6305582565</p>
                 <p>h.rayi@iitg.ac.in</p>
                 <p><a href="https://www.linkedin.com/in/yuvraj/">Linkedin</a></p>
               </div>
               <div className="cont">
-                <p >Yuvraj</p>
+                <p ><strong>Yuvraj</strong></p>
                 <p>7300505333</p>
                 <p>yuvrajsingh@iitg.ac.in</p>
-                
+                <p><a href="https://shorturl.at/tXlDj">Instagram</a></p>
                 <p><a href="https://www.linkedin.com/in/yuvraj/">Linkedin</a></p>
                 
               </div>
