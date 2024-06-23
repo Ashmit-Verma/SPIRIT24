@@ -28,6 +28,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Configure the MySQL session store
+console.log('Initializing session store...');
 const sessionStore = new MySQLStore({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -36,13 +37,27 @@ const sessionStore = new MySQLStore({
   database: process.env.DB_NAME,
 });
 
+// Log success or failure of session store creation
+sessionStore.on('connection', () => {
+  console.log('Session store connected successfully.');
+}).on('error', (error) => {
+  console.error('Failed to connect to session store:', error);
+});
+
+// Log session store sync result
+sessionStore.sync().then(() => {
+  console.log('Session store synced successfully');
+}).catch((error) => {
+  console.error('Failed to sync session store:', error);
+});
+
 app.use(session({
   secret: process.env.SESSION_SECRET, 
   resave: false, 
   saveUninitialized: false, 
   store: sessionStore, 
   cookie: {
-    secure: process.env.NODE_ENV === 'production', 
+    secure: true, 
     httpOnly: true,
     maxAge: 3600000, 
   },
