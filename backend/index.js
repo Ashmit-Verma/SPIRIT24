@@ -28,36 +28,36 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Configure the MySQL session store
-console.log('Initializing session store...');
-const sessionStore = new MySQLStore({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
+// console.log('Initializing session store...');
+// const sessionStore = new MySQLStore({
+//   host: process.env.DB_HOST,
+//   port: process.env.DB_PORT,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME,
+// });
 
-// Log success or failure of session store creation
-sessionStore.on('connection', () => {
-  console.log('Session store connected successfully.');
-}).on('error', (error) => {
-  console.error('Failed to connect to session store:', error);
-});
+// // Log success or failure of session store creation
+// sessionStore.on('connection', () => {
+//   console.log('Session store connected successfully.');
+// }).on('error', (error) => {
+//   console.error('Failed to connect to session store:', error);
+// });
 
 // Log session store sync result
 
 
-app.use(session({
-  secret: process.env.SESSION_SECRET, 
-  resave: false, 
-  saveUninitialized: false, 
-  store: sessionStore, 
-  cookie: {
-    secure: true, 
-    httpOnly: true,
-    maxAge: 3600000, 
-  },
-}));
+// app.use(session({
+//   secret: process.env.SESSION_SECRET, 
+//   resave: false, 
+//   saveUninitialized: false, 
+//   store: sessionStore, 
+//   cookie: {
+//     secure: true, 
+//     httpOnly: true,
+//     maxAge: 3600000, 
+//   },
+// }));
 
 app.use('/api', userRoutes);
 app.use('/signup', signRoute);

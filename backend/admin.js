@@ -84,36 +84,46 @@ const adminOptions = {
 
 const adminJs = new AdminJS(adminOptions);
 
-const SequelizeSessionStore = SequelizeStore(session.Store);
-const sessionStore = new SequelizeSessionStore({
-  db: sequelize,
-});
+// const SequelizeSessionStore = SequelizeStore(session.Store);
+// const sessionStore = new SequelizeSessionStore({
+//   db: sequelize,
+// });
 
-const sessionOptions = {
-  store: sessionStore,
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: true }, // Ensure cookies are sent over HTTPS
-};
+// const sessionOptions = {
+//   store: sessionStore,
+//   secret: process.env.SESSION_SECRET,
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie: { secure: true }, // Ensure cookies are sent over HTTPS
+// };
 
-const authenticate = async (email, password) => {
-  console.log('Attempting login with email:', email);
-  if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-    console.log('Correct credentials');
-    return { email: process.env.ADMIN_EMAIL };
-  }
-  console.log('Incorrect credentials');
-  return null;
-};
+// const authenticate = async (email, password) => {
+//   console.log('Attempting login with email:', email);
+//   if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+//     console.log('Correct credentials');
+//     return { email: process.env.ADMIN_EMAIL };
+//   }
+//   console.log('Incorrect credentials');
+//   return null;
+// };
 
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
-  authenticate,
-  cookiePassword: process.env.COOKIE_SECRET,
-}, null, sessionOptions);
+  authenticate: async (email, password) => {
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+        return { email: process.env.ADMIN_EMAIL };
+      }
+      return null;
+    },
+    cookiePassword:process.env.COOKIE_SECRET,
+});
 
-sessionStore.sync()
-  .then(() => console.log('Session store synced successfully'))
-  .catch((error) => console.error('Failed to sync session store:', error));
+// const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
+//   authenticate,
+//   cookiePassword: process.env.COOKIE_SECRET,
+// }, null, sessionOptions);
+
+// sessionStore.sync()
+//   .then(() => console.log('Session store synced successfully'))
+//   .catch((error) => console.error('Failed to sync session store:', error));
 
 export { adminJs, router };
