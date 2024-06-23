@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'KumbhSans';
+  src: url('../fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .App {
   
@@ -60,6 +66,7 @@
     display: block;
     margin-bottom: 6px;
     font-size: 12px;
+    font-family: 'KumbhSans',sans-serif;
   }
   
   input {
@@ -80,6 +87,7 @@
   }
   
   .underline-text {
+    font-family: 'KumbhSans',sans-serif;
     display: inline-block; /* Ensure the element is treated as a block for ::after */
     position: relative; /* Position relative to allow ::after positioning */
     font-size: 30px;

@@ -86,6 +86,7 @@
 }
 .large p{
   color:#FCDABB;
+  padding-left:1vw;
 }
 
 .animation::before {
@@ -206,7 +207,6 @@
 
 
   .large {
-    font-size:9vw;
     margin: -10px;
     background-image: url('/public/ellipses.svg');
     background-repeat: no-repeat;
@@ -255,7 +255,6 @@
 
 
   .large {
-    font-size: 9vw;
     margin: 1px;
     /* background-image: url('/public/ellipses.svg'); */
     background-repeat: no-repeat;
