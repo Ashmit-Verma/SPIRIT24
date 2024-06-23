@@ -11,10 +11,6 @@ import dotenv from 'dotenv';
 import argon2 from 'argon2';
 
 dotenv.config();
-
-const env = process.env.NODE_ENV || 'development';
-console.log('Running in environment:', env);
-
 // Log environment variables to verify they're set
 console.log('Admin email:', process.env.ADMIN_EMAIL);
 console.log('Cookie secret:', process.env.COOKIE_SECRET);
@@ -25,6 +21,8 @@ AdminJS.registerAdapter(AdminJSSequelize);
 const adminOptions = {
   databases: [sequelize],
   rootPath: '/admin',
+  loginPath: '/admin/login',
+  logoutPath: '/admin/logout',
   resources: [
     {
       resource: User,

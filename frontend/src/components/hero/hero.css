@@ -10,6 +10,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Russo';
+  src: url('../fonts/RussoOne-Regular.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .Hero-wrap {
   margin-top: 3%;
@@ -60,8 +66,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  font-family: 'VVDS',sans-serif;
+  font-family: 'Russo',sans-serif;
   word-spacing: 7px;
+  display: flex;
 }
 
 .animation {
@@ -76,6 +83,9 @@
   background-repeat: no-repeat;
   background-size: cover, contain;
   background-position: center, center;
+}
+.large p{
+  color:#FCDABB;
 }
 
 .animation::before {
