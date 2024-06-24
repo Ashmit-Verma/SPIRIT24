@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: ['https://spiritiitg.in/ca'
+  origin: ['https://spiritiitg.in'
   ],
   optionsSuccessStatus: 200,
 };
