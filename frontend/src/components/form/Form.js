@@ -88,7 +88,7 @@ function Form() {
       });
       if (response.status === 200) {
         // Redirect to OTP verification page
-        navigate('/otpVerify');
+        navigate('/ca/otpVerify');
       } else {
         throw new Error('Failed to sign up');
       }
@@ -103,7 +103,7 @@ function Form() {
       <h1 className='spirit'>SPIRIT</h1>
       <form onSubmit={handleSubmit}>
         <div className="underline-container">
-          <p className="underline-text">SignUp</p>
+          <p className="underline-text">Register</p>
           <hr className="underline" />
         </div>
 
@@ -194,7 +194,7 @@ function Form() {
         </div>
         <div className="others">
           <button type="submit" className="Done">Done</button>
-          <a className='cancel' href="/">cancel</a>
+          <a className='cancel' href="/ca">cancel</a>
         </div>
       </form>
     </div>

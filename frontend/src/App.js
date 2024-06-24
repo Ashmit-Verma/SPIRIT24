@@ -18,14 +18,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/signup" element={<Signup />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/otpVerify" element={<OtpVerify />} />
-        <Route path="/dashboard" element={<PrivateRoute element={Dashboard} />} />
-        {/* <Route path="/registrationSuccess" element={<PrivateRoute element={RegistrationSuccess} />} /> */}
+        <Route path="/ca" element={<Landing />} />
+        <Route path="/ca/signup" element={<Signup />} /> 
+        <Route path="/ca/login" element={<Login />} />
+        <Route path="/ca/otpVerify" element={<OtpVerify />} />
+        <Route path="/ca/dashboard" element={<PrivateRoute element={Dashboard} />} />
+        <Route path="/ca/registrationSuccess" element={<PrivateRoute element={RegistrationSuccess} />} />
         {/* <Route path="/Leaderboard" element={<Leaderboard />} /> */}
-        <Route path="/registrationSuccess" element={<RegistrationSuccess/>}></Route>
+        {/* <Route path="/registrationSuccess" element={<RegistrationSuccess/>}></Route> */}
+        <Route path="*" element={<Navigate to="/ca" />} />
       </Routes>
     </Router>
   );

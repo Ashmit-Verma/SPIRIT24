@@ -13,7 +13,7 @@ function OtpForm() {
       try {
         const response = await axios.post('https://spirit-kvql.onrender.com/signup/verifyOtp', { otp });
         if (response.status === 200) {
-          navigate('/login');
+          navigate('/ca/login');
         } else {
           alert('Invalid OTP');
         }
@@ -55,7 +55,7 @@ function OtpForm() {
         </div>
         <div className="others">
           <button type="submit" className="Done">Done</button>
-          <a className='cancel' href="/">cancel</a>
+          <a className='cancel' href="/ca">cancel</a>
         </div>
       </form>
     </div>

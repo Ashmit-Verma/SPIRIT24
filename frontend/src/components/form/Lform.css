@@ -50,7 +50,7 @@
   height: 180%;
   /* Large enough to prevent clipping */
   /* transform: translate(-50%, -50%); Center the image */
-  background:url('/public/ballses.png') center center no-repeat;
+  background:url('/public/sportsball.png') center center no-repeat;
   background-size: calc(40%);
   z-index: -1;
   animation: rotateBalls 5s linear infinite;

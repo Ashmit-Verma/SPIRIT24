@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: ['https://6678706ea47af8ca9ad36bf1--timely-mochi-34f86a.netlify.app'
+  origin: ['https://spiritiitg.in/ca'
   ],
   optionsSuccessStatus: 200,
 };

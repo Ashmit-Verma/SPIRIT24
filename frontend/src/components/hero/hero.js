@@ -10,7 +10,7 @@ const header = () => {
                 </div>
                 <p className='slogan'>Advertise | Organise | Conduct | Coordinate</p>
                 <p className='tagline'>With the vision to bring out the true Leader in you Spirit IIT Guwahati, presents the<br/> Campus Ambassador Program</p>
-                <a href="/signup" className="signup">Sign up</a>
+                <a href="/ca/signup" className="signup">Register</a>
               </div>
         </section>
     )

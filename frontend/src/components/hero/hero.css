@@ -16,7 +16,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Musseo';
+  src: url('../fonts/MuseoModerno-VariableFont_wght.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 .Hero-wrap {
   margin-top: 3%;
   background-image: url('/public/ellipses.svg');
@@ -144,7 +149,7 @@
   margin-bottom: 15px;
 }
 .tagline{
-  font-family: 'Inter',sans-serif;
+  font-family: 'Musseo',sans-serif;
   font-size: 24px;
   text-align: center;
 }

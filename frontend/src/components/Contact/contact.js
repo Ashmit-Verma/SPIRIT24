@@ -13,7 +13,7 @@ import './contact.css';
                 <p ><strong>Harshitha</strong></p>
                 <p>6305582565</p>
                 <p>h.rayi@iitg.ac.in</p>
-                <p><a href="https://www.linkedin.com/in/yuvraj/">Linkedin</a></p>
+                <p><a href="http://linkedin.com/in/harshitha-rayi-879756294">Linkedin</a></p>
               </div>
               <div className="cont">
                 <p ><strong>Yuvraj</strong></p>

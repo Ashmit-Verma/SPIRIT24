@@ -34,7 +34,7 @@ const navigate = useNavigate();
       if (response.status === 200) {
         console.log('Form submitted:', response.data);
         localStorage.setItem('token', response.data.token);
-        navigate('/registrationSuccess');
+        navigate('/ca/registrationSuccess');
       } else {
         alert('Wrong Credentials');
         console.error('Error:', response.data);
@@ -83,11 +83,11 @@ const navigate = useNavigate();
         <div className="others">
           <div className='option'>
           <button type="submit" className="continue">Continue</button>
-          <a className='cancel' href="/">cancel</a>
+          <a className='cancel' href="ca/">cancel</a>
           </div>
         
 
-          <small>Don't have an account? <a href="/signup">SignUp</a></small>
+          <small>Don't have an account? <a href="/ca/signup">SignUp</a></small>
         </div>
       </form>
     </div>

@@ -12,39 +12,39 @@ const Sponsors = () => {
                     <h3 className='spon'>Presented by</h3>
                 
                 <a href="https://renaissance.programmingpathshala.com">
-                    <img src="sponsor2.png" alt="Programming Pathshala"></img>
+                    <img src="Ppathsala.png" alt="Programming Pathshala"></img>
                 </a>
                 </div>
                 <div>
                     <h3 className='spon'>Powered by</h3>
                 <a href="https://yhills.com">
-                    <img src="sponsor6.png" alt="Yhills"></img>
+                    <img src="yh.png" alt="Yhills"></img>
                 </a>
                 </div>
                 <div>
                     <h3 className='spon'>Assessment Partner</h3>
                 <a href="https://www.languify.in/">
-                    <img src="sponsor1.png" alt="Languify"></img>
+                    <img src="lang.png" alt="Languify"></img>
                 </a>
                 </div>
                
                 <div>
                     <h3 className='spon'>Knowledge Partner</h3>
                 <a href="https://interviewbuddy.net/">
-                    <img src="sponsor3.png" alt="Interview Buddy"></img>
+                    <img src="knowledge.png" alt="Interview Buddy"></img>
                 </a>
                 </div>
                
                 <div>
                     <h3 className='spon'>Education Partner</h3>
                 <a href="https://www.swapso.io/">
-                    <img src="sponsor5.png" alt="Swapso"></img>
+                    <img src="swap.png" alt="Swapso"></img>
                 </a>
                 </div>
                 <div>
                   <h3 className='spon'>Certificate Partner</h3>   
                 <a href="https://givemycertificate.com/">
-                    <img src="sponsor4.png" alt="Give My Certificate"></img>
+                    <img src="cert.png" alt="Give My Certificate"></img>
                 </a>
                 </div>
                

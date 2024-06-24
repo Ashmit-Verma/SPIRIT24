@@ -31,12 +31,12 @@ const Footer=()=>{
     return(
         <div className="footer-cont" id="footer">
             <div className="first">
-                <img src="spirit.png" alt="" className="spirit-logo"/>
-                <img src="Frame 49.png" alt="Copyright"  className="copyright"/>
+                <img src="/spirit.png" alt="" className="spirit-logo"/>
+                <img src="/Frame 49.png" alt="Copyright"  className="copyright"/>
                 <div className="social-media">
-                    <a href="https://www.instagram.com/spirit_iitguwahati/" target="_blank"><img src="insta.png" alt=""  className="media-img"/></a>
-                    <a href="https://www.youtube.com/@spiritiitguwahati2541" target="_blank"><img src="youtube.png" alt="" className="media-img" /></a>
-                    <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="fb.png" alt="" className="media-img" /></a>
+                    <a href="https://www.instagram.com/spirit_iitguwahati/" target="_blank"><img src="/insta.png" alt=""  className="media-img"/></a>
+                    <a href="https://www.youtube.com/@spiritiitguwahati2541" target="_blank"><img src="/youtube.png" alt="" className="media-img" /></a>
+                    <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="/fb.png" alt="" className="media-img" /></a>
                     {/* <a href="https://www.facebook.com/spiritiitg/" target="_blank"><img src="in.png" alt="" className="media-img" /></a> */}
                 </div>
 
@@ -44,10 +44,10 @@ const Footer=()=>{
             <div className="big-div"><div className="second1">
                 <div className="quick">Quick Links</div>
                 <div className="links-div">
-                <div className="links"><a href="/#home">Home</a></div>
-                <div className="links"><a href="/#aboutus">About Us</a></div>
-                <div className="links"><a href="/#sponsors">Sponsors</a></div>
-                <div className="links"><a href="/#gallery">Gallery</a></div>
+                <div className="links"><a href="/ca/#home">Home</a></div>
+                <div className="links"><a href="/ca/#aboutus">About Us</a></div>
+                <div className="links"><a href="/ca/#sponsors">Sponsors</a></div>
+                <div className="links"><a href="/ca/#gallery">Gallery</a></div>
                 </div>
             </div>
             <div className="second2">

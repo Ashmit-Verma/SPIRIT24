@@ -15,7 +15,7 @@ const Header = () => {
         if (confirmLogout) {
             localStorage.removeItem('token');
             setIsLoggedIn(false);
-            window.location.href = '/';
+            window.location.href = '/ca';
         }
     };
 
@@ -27,19 +27,19 @@ const Header = () => {
         <section className='h-wrap'>
             <div className='navbar'>
                 <div className="logo">
-                   <a href="/"><img src="spiritlogo.jpg" alt="Logo" /></a> 
+                   <a href="/ca"><img src="/spiritlogo.jpg" alt="Logo" /></a> 
                 </div>
                 <div className={`points ${isMenuOpen ? 'active' : ''}`}>
-                    <a href="/#aboutus">About</a>
-                    <a href="/#sponsors">Sponsors</a>
-                    <a href="/#faq">FAQ</a>
-                    <a href="/#footer">Contact Us</a>
+                    <a href="/ca/#aboutus">About</a>
+                    <a href="/ca/#sponsors">Sponsors</a>
+                    <a href="/ca/#faq">FAQ</a>
+                    <a href="/ca/#footer">Contact Us</a>
                 </div>
                 <div className="login">
                     {isLoggedIn ? (
                         <button onClick={handleLogout} className="logbut">Logout</button>
                     ) : (
-                        <a href="/login" className="log">Login</a>
+                        <a href="/ca/login" className="log">Login</a>
                     )}
                 </div>
                 <div className="hamburger" onClick={toggleMenu}>
@@ -49,10 +49,10 @@ const Header = () => {
                 </div>
             </div>
             <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-                <li><a href="/#aboutus">About</a></li>
-                <li><a href="/#sponsors">Sponsors</a></li>
-                <li><a href="/#contactus">Contact Us</a></li>
-                <li><a href="/#faq">FAQ</a></li>
+                <li><a href="/ca/#aboutus">About</a></li>
+                <li><a href="/ca/#sponsors">Sponsors</a></li>
+                <li><a href="/ca/#contactus">Contact Us</a></li>
+                <li><a href="/ca/#faq">FAQ</a></li>
             </ul>
         </section>
     );
