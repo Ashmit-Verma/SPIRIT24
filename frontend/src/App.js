@@ -22,7 +22,7 @@ function App() {
         <Route path="/ca/signup" element={<Signup />} /> 
         <Route path="/ca/login" element={<Login />} />
         <Route path="/ca/otpVerify" element={<OtpVerify />} />
-        <Route path="/ca/dashboard" element={<PrivateRoute element={Dashboard} />} />
+        {/* <Route path="/ca/dashboard" element={<PrivateRoute element={Dashboard} />} /> */}
         <Route path="/ca/registrationSuccess" element={<PrivateRoute element={RegistrationSuccess} />} />
         {/* <Route path="/Leaderboard" element={<Leaderboard />} /> */}
         {/* <Route path="/registrationSuccess" element={<RegistrationSuccess/>}></Route> */}

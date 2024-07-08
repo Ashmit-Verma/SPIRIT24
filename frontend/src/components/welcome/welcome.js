@@ -7,7 +7,7 @@ const Welcome = () => {
                 Welcome to Spirit!
             </div>
             <div className='content'>
-                Welcome to Spirit, the annual sports festival of IIT Guwahati, and one of the largest and most eagerly anticipated sports events in North-east India. Scheduled for 3 to 5 November, Spirit brings together aspiring athletes from across the nation, offering a dynamic platform to showcase their talents and participate in a wide range of sports activities.
+                Welcome to Spirit, the annual sports festival of IIT Guwahati, and one of the largest and most eagerly anticipated sports events in North-east India. Scheduled for 24 to 27 October, Spirit brings together aspiring athletes from across the nation, offering a dynamic platform to showcase their talents and participate in a wide range of sports activities.
 
             </div>
             <div className='content'>

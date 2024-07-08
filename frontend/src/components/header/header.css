@@ -102,6 +102,7 @@ body {
   display: none;
   cursor: pointer;
   padding: 10px;
+  
 }
 
 .hamburger .bar {
@@ -132,7 +133,8 @@ body {
 }
 
 .nav-links.open {
-  height: 150px; /* Adjust height based on number of links */
+  height: 180px;
+  position: fixed;/* Adjust height based on number of links */
 }
 
 .nav-links li {
@@ -152,7 +154,12 @@ body {
 .nav-links li a:hover {
   background-color: #575757;
 }
-
+@media(max-width:871px)
+{
+  .points a{
+    margin-right: 18px;
+  }
+}
 @media (max-width: 768px) {
   .navbar {
     margin-top: 30px;

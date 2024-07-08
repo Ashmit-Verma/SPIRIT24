@@ -29,7 +29,7 @@ const Footer=()=>{
         }
     };
     return(
-        <div className="footer-cont" id="footer">
+        <div className="footer-cont" >
             <div className="first">
                 <img src="/spirit.png" alt="" className="spirit-logo"/>
                 <img src="/Frame 49.png" alt="Copyright"  className="copyright"/>
@@ -53,12 +53,12 @@ const Footer=()=>{
             <div className="second2">
             <div className="quick">Your Opinion matters</div>
             <form class="opinion" onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input className="inputbox" type="text" name="name" value={formData.name} onChange={handleChange} />
-                    <label>Email</label>
-                    <input className="inputbox" type="email" name="email" value={formData.email} onChange={handleChange} />
-                    <label>Message</label>
-                    <textarea className="inputbox" name="message" value={formData.message} onChange={handleChange}></textarea>
+                    <label htmlFor="name">Name</label>
+                    <input className="inputbox" type="text"id="name" name="name" value={formData.name} onChange={handleChange} />
+                    <label htmlFor="email">Email</label>
+                    <input className="inputbox" type="email"id="email" name="email" value={formData.email} onChange={handleChange} />
+                    <label htmlFor="message">Message</label>
+                    <textarea className="inputbox"id="message" name="message" value={formData.message} onChange={handleChange}></textarea>
                 <button type="submit">Submit</button>
             </form>
         </div>

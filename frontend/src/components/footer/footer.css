@@ -3,6 +3,11 @@
     src: url("../fonts/KumbhSans-VariableFont_YOPQ,wght.ttf");
     font-weight: 800;
 }
+@font-face {
+    font-family: "Saira";
+    src: url("../fonts/Saira_Condensed-Regular.ttf");
+    font-weight: 800;
+}
 .footer-cont{
     display: flex;
     flex-direction: row;
@@ -52,7 +57,7 @@
 
 .quick{
     margin-top: 2vh;
-    font-family: 'KumbhSans',sans-serif;
+    font-family: 'Saira',sans-serif;
     font-size: 5vh;
     color: #E57847;
 }
@@ -65,7 +70,7 @@
     margin-top: 5vh;
     font-size: 2vh;
     color: #E57847;
-    font-family: 'KumbhSans',sans-serif;
+    font-family: 'Sairi',sans-serif;
 
 }
 
@@ -96,7 +101,7 @@
 label {
     display: block;
     margin-bottom: 5px;
-    font-family: 'KumbhSans',sans-serif;
+    font-family: 'Saira',sans-serif;
 }
 .opinion{
     background-color: #1E2027;
@@ -148,6 +153,7 @@ button:hover {
     
     }
     .spirit-logo{
+        margin-top: 30px;
         width: 60vw;
         object-fit: contain;
     }

@@ -31,9 +31,10 @@ const Header = () => {
                 </div>
                 <div className={`points ${isMenuOpen ? 'active' : ''}`}>
                     <a href="/ca/#aboutus">About</a>
+                    <a href="/ca/#incent">Incentives</a>
                     <a href="/ca/#sponsors">Sponsors</a>
                     <a href="/ca/#faq">FAQ</a>
-                    <a href="/ca/#footer">Contact Us</a>
+                    <a href="/ca/#footer">Contact</a>
                 </div>
                 <div className="login">
                     {isLoggedIn ? (
@@ -50,8 +51,9 @@ const Header = () => {
             </div>
             <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <li><a href="/ca/#aboutus">About</a></li>
+                <li><a href="/ca/#incent">Incentives</a></li>
                 <li><a href="/ca/#sponsors">Sponsors</a></li>
-                <li><a href="/ca/#contactus">Contact Us</a></li>
+                <li><a href="/ca/#footer">Contact</a></li>
                 <li><a href="/ca/#faq">FAQ</a></li>
             </ul>
         </section>

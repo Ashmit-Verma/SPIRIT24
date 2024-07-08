@@ -9,7 +9,6 @@ const User = sequelize.define(
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-      unique: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -54,6 +53,12 @@ const User = sequelize.define(
         }
       },
     },
+    indexes: [
+      {
+        unique: true,
+        fields: ['email'],
+      },
+    ],
   }
 );
 

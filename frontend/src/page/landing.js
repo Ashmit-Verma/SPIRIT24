@@ -9,6 +9,7 @@ import Sponsors from '../components/sponsors/sponsors.js';
 import Whyca from '../components/Whyca/Whyca.js';
 import Caresponsibility from '../components/responsibility/responsibility.js';
 import Widget from '../components/Contact/contact.js';
+import Incentive from '../components/Incentives/Incentive.js';
 import LoadingAnimation from '../components/LoadingAnimation/loadingAnimation.js';
 
 const Landing = () => {
@@ -20,6 +21,7 @@ const Landing = () => {
       <Welcome />
       <Whyca/>
       <Caresponsibility/>
+      <Incentive/>
       <Gallery />
       <Widget/>
       <Faq />
