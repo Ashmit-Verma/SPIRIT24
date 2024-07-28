@@ -1,13 +1,52 @@
-// LoadingAnimation.js
 import React from 'react';
-import './loadingAnimation.css'; // Import CSS for styling
+import { motion } from 'framer-motion';
 
-const LoadingAnimation = ({ isLoading }) => {
+const LoadingSpinner = () => {
+  const containerVariants = {
+    start: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+    end: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const circleVariants = {
+    start: {
+      y: '0%',
+    },
+    end: {
+      y: '100%',
+    },
+  };
+
+  const circleTransition = {
+    duration: 0.5,
+    yoyo: Infinity,
+    ease: 'easeInOut',
+  };
+
   return (
-    <div className={`loading-overlay ${isLoading ? 'visible' : ''}`}>
-      <div className="spinner"></div>
-    </div>
+    <motion.div
+      className="loading-spinner"
+      variants={containerVariants}
+      initial="start"
+      animate="end"
+    >
+      {[...Array(3)].map((_, i) => (
+        <motion.span
+          key={i}
+          className="circle"
+          variants={circleVariants}
+          transition={circleTransition}
+        />
+      ))}
+    </motion.div>
   );
 };
 
-export default LoadingAnimation;
+export default LoadingSpinner;

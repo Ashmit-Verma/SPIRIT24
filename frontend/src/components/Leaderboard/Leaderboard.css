@@ -4,8 +4,14 @@ body {
 }
 
 .leaderboard-container {
+    margin-top: 80px;
     text-align: center;
     padding: 20px;
+    background-image: url('/public/ellipses.svg');
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center
 }
 
 .leaderboard-header {

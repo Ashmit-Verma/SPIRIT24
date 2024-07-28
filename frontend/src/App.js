@@ -7,7 +7,8 @@ import Login from './page/login';
 import Dashboard from './page/dashboard';
 import OtpVerify from './page/otpverify';
 import RegistrationSuccess from './page/registrationSuccess';
-import Leaderboard from './components/Leaderboard/Leaderboard.js';
+import Leaderboard from './page/leaderboard.js';
+import Rule from './page/rules.js'
 
 const PrivateRoute = ({ element: Element }) => {
   const isAuthenticated = !!localStorage.getItem('token'); // Simplified authentication check
@@ -24,7 +25,8 @@ function App() {
         <Route path="/ca/otpVerify" element={<OtpVerify />} />
         {/* <Route path="/ca/dashboard" element={<PrivateRoute element={Dashboard} />} /> */}
         <Route path="/ca/registrationSuccess" element={<PrivateRoute element={RegistrationSuccess} />} />
-        {/* <Route path="/Leaderboard" element={<Leaderboard />} /> */}
+        <Route path="/ca/leaderboard" element={<Leaderboard />} />
+        <Route path="/ca/rule" element={<Rule />} />
         {/* <Route path="/registrationSuccess" element={<RegistrationSuccess/>}></Route> */}
         <Route path="*" element={<Navigate to="/ca" />} />
       </Routes>

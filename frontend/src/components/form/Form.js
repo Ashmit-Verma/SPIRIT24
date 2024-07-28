@@ -17,6 +17,7 @@ function Form() {
 
   const [errors, setErrors] = useState({});
   const [collegeSuggestions, setCollegeSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const suggestionBoxRef = useRef(null);
 
@@ -76,6 +77,9 @@ function Form() {
       setErrors(validationErrors);
       return;
     }
+
+    setLoading(true);
+
     console.log('Form submitted successfully:', formData);
 
     try {
@@ -87,19 +91,25 @@ function Form() {
         password: formData.password,
       });
       if (response.status === 200) {
-        // Redirect to OTP verification page
+        setLoading(false);
         navigate('/ca/otpVerify');
       } else {
         throw new Error('Failed to sign up');
       }
     } catch (error) {
       console.error('Error during form submission:', error);
+      setLoading(false);
       alert('Error registering user');
     }
   };
 
   return (
     <div className="LApp animation">
+      {loading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner"></div>
+        </div>
+      )}
       <h1 className='spirit'>SPIRIT</h1>
       <form onSubmit={handleSubmit}>
         <div className="underline-container">

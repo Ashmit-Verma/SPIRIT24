@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "KumbhSans";
+    src: url("../fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'VVDS';
+    src: url('../fonts/VVDS-Fifties-Exp-Bold-Italic.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    background:rgba(238, 111, 39);
+}
+
+.rule-container {
+    margin-top: 80px;
+    padding: 40px;text-align: center;
+    padding: 20px;
+    background-image: url('/public/ellipses.svg');
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.rule-header {
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 20px;
+    font-family: 'VVDS','sans-serif';
+}
+
+.rule-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* White background with 80% opacity */
+    text-align: left;
+    margin: 10px;
+    padding: 80px;
+}
+
+.para{
+    font-family: 'KumbhSans','sans-serif';
+    font-size: 25px;
+    margin-bottom:25px;
+}
+
+
+
