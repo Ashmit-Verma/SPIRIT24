@@ -92,8 +92,10 @@ function Form() {
       });
       if (response.status === 200) {
         setLoading(false);
+        localStorage.setItem('email', formData.email);
         navigate('/ca/otpVerify');
       } else {
+        setLoading(false);
         throw new Error('Failed to sign up');
       }
     } catch (error) {

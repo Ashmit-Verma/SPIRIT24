@@ -9,6 +9,7 @@ function LForm() {
     email: '',
     password: '',
   });
+  const [loading, setLoading] = useState(false);
 
 const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     console.log('Form submitted successfully:', formData);
 
     try {
@@ -32,21 +34,36 @@ const navigate = useNavigate();
       });
       localStorage.setItem('token', response.data.token);
       if (response.status === 200) {
+        setLoading(false);
         console.log('Form submitted:', response.data);
         localStorage.setItem('token', response.data.token);
         navigate('/ca/registrationSuccess');
       } else {
+        setLoading(false);
         alert('Wrong Credentials');
         console.error('Error:', response.data);
       }
     } catch (error) {
-      console.error('Error during form submission:', error);
-      alert('Error during form submission:');
+      setLoading(false);
+      if(response.status === 404)
+      {
+        alert('Wrong Credentials');
+        console.error('Error:', response.data);
+      }
+      else{
+        console.error('Error during form submission:', error);
+        alert('Error during form submission:');
+      }
     }
   };
 
   return (
     <div className="LApp animation">
+       {loading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner"></div>
+        </div>
+      )}
       <h1 className='spirit'>SPIRIT</h1>
       <form className='Lform' onSubmit={handleSubmit}>
         <div className="underline-container">

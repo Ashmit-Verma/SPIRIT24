@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css';
@@ -6,12 +6,22 @@ import './Form.css';
 
 function OtpForm() {
     const [otp, setOtp] = useState('');
+    const [email, setEmail] = useState('');
     const navigate = useNavigate();
+    useEffect(() => {
+      const storedEmail = localStorage.getItem('email');
+      if (storedEmail) {
+        setEmail(storedEmail);
+      } else {
+        alert('Email not found, please sign up again.');
+        navigate('/ca/signup');
+      }
+    }, [navigate]);
   
     const handleOtpSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('https://spirit-kvql.onrender.com/signup/verifyOtp', { otp });
+        const response = await axios.post('https://spirit-kvql.onrender.com/signup/verifyOtp', {email, otp });
         if (response.status === 200) {
           navigate('/ca/login');
         } else {
