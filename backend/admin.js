@@ -6,6 +6,7 @@ import AdminJSExpress from '@adminjs/express';
 import AdminJSSequelize from '@adminjs/sequelize';
 import sequelize from './config/database.js';
 import User from './models/User.js';
+import Task from './models/task.js';  
 import Opinion from './models/opinion.js';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
@@ -76,6 +77,26 @@ const adminOptions = {
           message: {
             type: 'richtext',
           },
+        },
+      },
+    },
+    {
+      resource: Task,  // Add the Task model here
+      options: {
+        properties: {
+          header: {
+            type: 'string',
+            isVisible: { list: true, filter: true, show: true, edit: true },
+          },
+          description: {
+            type: 'textarea',
+            isVisible: { list: true, filter: true, show: true, edit: true },
+          },
+        },
+        actions: {
+          new: { isVisible: true },
+          edit: { isVisible: true },
+          delete: { isVisible: true },
         },
       },
     },

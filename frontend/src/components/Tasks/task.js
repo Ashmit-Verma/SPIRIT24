@@ -1,20 +1,10 @@
 import React from 'react';
-import './Leaderboard.css';
+import './task.css';
 
 const Leaderboard = () => {
     // const leaderboardData = new Array(10).fill({ name: 'NAME HERE', points: 0 });
     const leaderboardData = [
         { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        { name: 'NAME HERE', points: 0 },
-        // Add more data entries...
       ];
 
     return (

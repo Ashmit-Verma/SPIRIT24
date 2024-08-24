@@ -4,7 +4,7 @@ import './ruleComponent.css';
 const Leaderboard = () => {
     return (
         <div className="rule-container">
-            <div className="rule-header">Roles of a CA</div>
+            <div className="rule-header">Rules of a CA</div>
             <div className="rule-list">
             <p className="para">ENSURING MAXIMUM PARTICIPATION</p> 
 <p className="para">The primary responsibility of each Campus Ambassador is to maximize participation from their college. Their efforts will be evaluated through a points scheme.</p>

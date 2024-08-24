@@ -9,7 +9,7 @@ const Leaderboard = () => {
       try {
         const response = await axios.get('https://spirit-kvql.onrender.com/scoreboard');
         setLeaderboardData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
    
       } catch (error) {
         console.error('Error fetching leaderboard data:', error);
