@@ -22,7 +22,7 @@ const server = http.createServer(app);
 
 app.use(express.json());
 const corsOptions = {
-  origin: ['https://spiritiitg.in'
+  origin: ['https://spiritiitg.in','http://localhost:3000',
   ],
   optionsSuccessStatus: 200,
 };

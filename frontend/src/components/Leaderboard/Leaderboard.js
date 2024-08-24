@@ -7,7 +7,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await axios.get('https://spirit-kvql.onrender.com/scoreboard');
+        const response = await axios.get('https://spirit-kvql.onrender.com/scoreboard/scoreboard');
         setLeaderboardData(response.data);
         console.log(response.data);
    

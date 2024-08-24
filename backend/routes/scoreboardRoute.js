@@ -4,6 +4,6 @@ import { getScoreboard } from "../controllers/scoreboardController.js";
 // const scoreboardController = require("../controllers/scoreboardController");
 
 // Route to get the sorted scoreboard
-router.get("/scoreboard", getScoreboard);
+router.get("/", getScoreboard);
 
 export default router;
