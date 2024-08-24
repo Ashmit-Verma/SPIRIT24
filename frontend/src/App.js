@@ -25,7 +25,7 @@ function App() {
         <Route path="/ca/otpVerify" element={<OtpVerify />} />
         {/* <Route path="/ca/dashboard" element={<PrivateRoute element={Dashboard} />} /> */}
         <Route path="/ca/registrationSuccess" element={<PrivateRoute element={RegistrationSuccess} />} />
-        {/* <Route path="/ca/leaderboard" element={<Leaderboard />} /> */}
+        <Route path="/ca/leaderboard" element={<Leaderboard />} />
         {/* <Route path="/ca/rule" element={<Rule />} /> */}
         {/* <Route path="/registrationSuccess" element={<RegistrationSuccess/>}></Route> */}
         <Route path="*" element={<Navigate to="/ca" />} />

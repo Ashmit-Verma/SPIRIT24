@@ -45,16 +45,11 @@ const navigate = useNavigate();
       }
     } catch (error) {
       setLoading(false);
-      if(response.status === 404)
-      {
-        alert('Wrong Credentials');
-        console.error('Error:', response.data);
-      }
-      else{
+
         console.error('Error during form submission:', error);
         alert('Error during form submission:');
       }
-    }
+  
   };
 
   return (

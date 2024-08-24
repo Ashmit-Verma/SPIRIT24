@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 
-const getScoreboard = async (req, res) => {
+export const getScoreboard = async (req, res) => {
     try {
 
       const users = await User.findAll({
@@ -12,8 +12,4 @@ const getScoreboard = async (req, res) => {
     } catch (error) {
       res.status(500).send(error.message);
     }
-  };
-  
-  module.exports = {
-    getScoreboard
   };

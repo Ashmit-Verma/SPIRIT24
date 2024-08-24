@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background:rgba(238, 111, 39);
+    background: rgba(238, 111, 39);
 }
 
 .leaderboard-container {
@@ -11,7 +11,7 @@ body {
     background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: center;
 }
 
 .leaderboard-header {
@@ -30,7 +30,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.522); /* change color accordingly */
+    background-color: rgba(255, 255, 255, 0.522);
     margin: 10px 0;
     padding: 10px 20px;
     border-radius: 25px;
@@ -45,9 +45,53 @@ body {
     flex: 1;
     text-align: left;
     margin-left: 20px;
+    
+   
+    white-space: nowrap;
 }
 
-.leaderboard-item .capoints {
+.leaderboard-item .points {
     text-align: right;
     color: #333;
+    
+    
+}
+
+/* Responsive Styles */
+@media (max-width: 645px) {
+    
+    .leaderboard-header {
+        font-size: 37px;
+    }
+
+    
+   
+
+    .points {
+        margin: 10px 0px;
+        font-size: 14px;
+        display: inline;
+
+    }
+}
+
+@media (max-width: 450px) {
+
+    .leaderboard-header {
+        font-size: 32px;
+    }
+
+    .leaderboard-item {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .leaderboard-item .name {
+        margin-left: 5px;
+        margin-right: 3px;
+    }
+
+    .leaderboard-item .points {
+        margin-left: 3px;
+    }
 }

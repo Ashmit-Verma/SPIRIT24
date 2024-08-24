@@ -12,6 +12,7 @@ import signRoute from './routes/signUpRoute.js';
 import userRoutes from './routes/userRoutes.js';
 import loginRoute from './routes/loginRoute.js';
 import opinionRoute from './routes/opinionRoute.js'
+import scoreboardRoute from './routes/scoreboardRoute.js'
 
 
 dotenv.config();
@@ -64,6 +65,7 @@ app.use('/api', userRoutes);
 app.use('/signup', signRoute);
 app.use('/login', loginRoute);
 app.use("/opinion",opinionRoute);
+app.use("/scoreboard",scoreboardRoute);
 app.use(adminJs.options.rootPath, adminRouter);
 
 app.get('/', (req, res) => {
