@@ -4,7 +4,7 @@ export const getScoreboard = async (req, res) => {
     try {
 
       const users = await User.findAll({
-        attributes: ['username', 'points'], // Selecting username and points
+        attributes: ['name', 'points'], // Selecting username and points
         order: [['points', 'DESC']] // Order by points in descending order
       });
 
