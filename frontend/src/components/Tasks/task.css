@@ -26,8 +26,9 @@ body {
     margin: 0;
 }
 
-.leaderboard-item {
+.task-item {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.522);
@@ -37,11 +38,11 @@ body {
     font-size: 18px;
 }
 
-.leaderboard-item .position {
+.task-item .position {
     font-weight: bold;
 }
 
-.leaderboard-item .name {
+.task-item .name {
     flex: 1;
     text-align: left;
     margin-left: 20px;
@@ -50,7 +51,7 @@ body {
     white-space: nowrap;
 }
 
-.leaderboard-item .points {
+.task-item .points {
     text-align: right;
     color: #333;
     
@@ -81,17 +82,17 @@ body {
         font-size: 32px;
     }
 
-    .leaderboard-item {
+    .task-item {
         font-size: 12px;
         padding: 6px 8px;
     }
 
-    .leaderboard-item .name {
+    .task-item .name {
         margin-left: 5px;
         margin-right: 3px;
     }
 
-    .leaderboard-item .points {
+    .task-item .points {
         margin-left: 3px;
     }
 }
